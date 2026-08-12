@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Administrar Aplicaciones SST | La Movida SST Plus</title>
+  <meta name="description" content="Panel privado de administración del catálogo de Aplicaciones SST de La Movida SST Plus.">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="theme-color" content="#0B2A6F">
+  <link rel="canonical" href="https://aplicaciones.movidasst.com/admin.html">
+  <style>
+    :root{
+      --navy:#0B2A6F;--petrol:#006D8F;--green:#58B947;--yellow:#F4C430;--blue:#0038A8;--red:#CF142B;
+      --ink:#172033;--muted:#64748b;--line:#dfe7ef;--bg:#f5f8fb;--surface:#fff;--danger:#b42318;
+      --shadow:0 16px 42px rgba(15,41,71,.10);--max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,textarea,select{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(0,109,143,.22);outline-offset:2px}
+    .wrap{width:min(100% - 28px,var(--max));margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .topbar:after{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
+    .topbar-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
+    .brand img{width:54px;height:54px;object-fit:contain;background:#fff;padding:4px;border-radius:15px;box-shadow:0 8px 22px rgba(11,42,111,.08)}
+    .brand strong{display:block;color:var(--navy);font-size:.98rem}
+    .brand span{display:block;color:var(--petrol);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+    .top-actions{display:flex;align-items:center;gap:8px}
+    .btn{min-height:44px;border:0;border-radius:13px;padding:0 15px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+    .btn-primary{background:linear-gradient(135deg,var(--navy),var(--petrol));color:#fff}
+    .btn-secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    .btn-soft{background:#eef5f8;color:var(--petrol)}
+    .btn-danger{background:#fff1f2;color:#b42318;border:1px solid #fecdd3}
+    .btn-green{background:#edf8ea;color:#2f7d23;border:1px solid #cde8c5}
+    .btn:disabled{opacity:.55;cursor:not-allowed}
+    .page{padding:28px 0 50px}
+    .hero{background:linear-gradient(135deg,#0B2A6F,#075779 62%,#007f91);color:#fff;border-radius:26px;padding:24px 20px 32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
+    .hero-brand{display:flex;align-items:center;gap:14px;position:relative}
+    .hero-brand img{width:70px;height:70px;object-fit:contain;background:#fff;padding:6px;border-radius:20px}
+    .hero h1{margin:18px 0 8px;font-size:clamp(1.8rem,7vw,3.4rem);line-height:1;letter-spacing:-.04em}
+    .hero p{margin:0;color:#d8edf3;line-height:1.55;max-width:760px}
+    .notice{margin-top:16px;background:#fffbea;border:1px solid #f3df9a;color:#6b5808;border-radius:16px;padding:13px 14px;font-size:.85rem;line-height:1.55}
+    .card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 26px rgba(15,41,71,.06)}
+    .login-shell{max-width:560px;margin:22px auto 0}
+    .login-card{padding:20px}
+    .login-card h2{margin:0 0 6px;color:var(--navy);font-size:1.35rem}
+    .login-card p{margin:0 0 18px;color:var(--muted);font-size:.9rem;line-height:1.55}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .field label{display:block;font-size:.78rem;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.045em;margin:0 0 7px}
+    .input,.textarea,.select{width:100%;border:1px solid #cfdbe6;background:#fff;color:var(--ink);border-radius:13px;padding:12px 13px;min-height:46px}
+    .textarea{min-height:110px;resize:vertical;line-height:1.5}
+    .hint{font-size:.75rem;color:var(--muted);margin-top:5px;line-height:1.4}
+    .error{display:none;margin-top:12px;background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;padding:11px 12px;border-radius:13px;font-size:.84rem;line-height:1.45}
+    .error.show{display:block}
+    .success{display:none;margin-top:12px;background:#effaf0;border:1px solid #c7e9c8;color:#246b28;padding:11px 12px;border-radius:13px;font-size:.84rem;line-height:1.45}
+    .success.show{display:block}
+    .admin{display:none;margin-top:22px}
+    .admin.show{display:block}
+    .toolbar{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+    .toolbar-left,.toolbar-right{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .search{flex:1;min-width:210px}
+    .stats{font-size:.82rem;font-weight:900;color:var(--petrol);background:#eaf6f8;border-radius:999px;padding:8px 10px}
+    .list{display:grid;grid-template-columns:1fr;gap:12px}
+    .item{padding:16px}
+    .item-top{display:flex;gap:12px;align-items:flex-start}
+    .item-icon{width:50px;height:50px;flex:0 0 auto;border-radius:15px;background:#eaf6f8;color:var(--navy);display:grid;place-items:center;font-weight:900}
+    .item-main{min-width:0;flex:1}
+    .item-title{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .item-title h3{margin:0;font-size:1.05rem;color:var(--ink)}
+    .badge{font-size:.68rem;font-weight:900;border-radius:999px;padding:5px 8px;background:#f1f5f9;color:#475569}
+    .badge.pub{background:#dcfce7;color:#166534}
+    .badge.arch{background:#fee2e2;color:#991b1b}
+    .badge.dest{background:#e0f2fe;color:#075985}
+    .meta{margin-top:5px;color:var(--muted);font-size:.78rem;line-height:1.4}
+    .desc{margin:10px 0 0;color:#475569;font-size:.86rem;line-height:1.5}
+    .item-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+    .item-actions .btn{min-height:38px;padding:0 11px;font-size:.78rem}
+    .empty{text-align:center;padding:32px 18px;color:var(--muted)}
+    .empty h3{color:var(--navy);margin:0 0 8px}
+    .modal{position:fixed;inset:0;background:rgba(7,28,60,.55);z-index:100;display:none;align-items:flex-end;justify-content:center;padding:0}
+    .modal.open{display:flex}
+    .sheet{background:#fff;width:100%;max-height:94vh;overflow:auto;border-radius:24px 24px 0 0;box-shadow:0 -16px 50px rgba(7,28,60,.22)}
+    .sheet-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:3}
+    .sheet-head h2{margin:0;color:var(--navy);font-size:1.15rem}
+    .sheet-body{padding:16px}
+    .checks{display:grid;grid-template-columns:1fr;gap:10px}
+    .check{display:flex;align-items:center;gap:9px;padding:11px;border:1px solid var(--line);border-radius:13px;background:#f8fafc}
+    .check input{width:18px;height:18px}
+    .sheet-actions{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:13px 16px;display:flex;gap:9px}
+    .sheet-actions .btn{flex:1}
+    .loading{display:none;margin-top:14px;text-align:center;color:var(--muted);font-size:.86rem}
+    .loading.show{display:block}
+    footer{margin-top:30px;background:#071c3c;color:#cddce8;padding:26px 0 calc(26px + env(safe-area-inset-bottom));position:relative}
+    footer:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
+    .footer-inner{display:flex;flex-direction:column;gap:12px}
+    .footer-inner a{color:#fff;text-decoration:none;font-weight:800}
+    @media(min-width:700px){
+      .wrap{width:min(100% - 40px,var(--max))}
+      .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .toolbar{flex-direction:row;justify-content:space-between;align-items:center}
+      .list{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .modal{align-items:center;padding:24px}
+      .sheet{max-width:820px;border-radius:24px;max-height:90vh}
+      .checks{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .footer-inner{flex-direction:row;justify-content:space-between;align-items:center}
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/" target="_self" aria-label="Volver al portal de aplicaciones">
+      <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus">
+      <div><strong>La Movida SST Plus</strong><span>Administración de aplicaciones</span></div>
+    </a>
+    <div class="top-actions">
+      <a class="btn btn-secondary" href="/" target="_self">Portal</a>
+      <a class="btn btn-soft" href="https://www.movidasst.com/" target="_self">MovidaSST.com</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-brand">
+        <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus">
+        <div><strong>Panel privado</strong><br><span style="color:#ffeaa1;font-weight:900">Catálogo dinámico</span></div>
+      </div>
+      <h1>Administrar Aplicaciones SST</h1>
+      <p>Crea, edita, publica, oculta y archiva aplicaciones sin volver a modificar el código del portal.</p>
+    </section>
+
+    <div class="notice">
+      El código de integrante se utiliza únicamente para validar cada operación administrativa con Supabase y no se guarda en localStorage ni sessionStorage.
+    </div>
+
+    <section id="login-shell" class="login-shell">
+      <div class="card login-card">
+        <h2>Acceso de administración</h2>
+        <p>Ingresa con la cédula y el código de un integrante registrado como <strong>administrador general</strong>.</p>
+        <form id="login-form" novalidate>
+          <div class="grid">
+            <div class="field">
+              <label for="cedula">Cédula</label>
+              <input id="cedula" class="input" type="text" inputmode="numeric" autocomplete="username" placeholder="Ej. 13534591" maxlength="15">
+            </div>
+            <div class="field">
+              <label for="codigo">Código de registro</label>
+              <input id="codigo" class="input" type="password" autocomplete="current-password" placeholder="5 caracteres" maxlength="5">
+            </div>
+          </div>
+          <button id="login-btn" class="btn btn-primary" type="submit" style="width:100%;margin-top:14px">Ingresar al panel</button>
+          <div id="login-error" class="error" role="alert"></div>
+          <div id="login-loading" class="loading">Validando acceso…</div>
+        </form>
+      </div>
+    </section>
+
+    <section id="admin" class="admin">
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <button id="new-btn" class="btn btn-primary" type="button">+ Nueva aplicación</button>
+          <span id="stats" class="stats">0 registros</span>
+        </div>
+        <div class="toolbar-right">
+          <input id="admin-search" class="input search" type="search" placeholder="Buscar en el catálogo…">
+          <button id="refresh-btn" class="btn btn-secondary" type="button">Actualizar</button>
+          <button id="logout-btn" class="btn btn-danger" type="button">Salir</button>
+        </div>
+      </div>
+      <div id="admin-message" class="success" role="status"></div>
+      <div id="admin-error" class="error" role="alert"></div>
+      <div id="list" class="list"></div>
+    </section>
+  </div>
+</main>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="sheet-head">
+      <h2 id="modal-title">Nueva aplicación</h2>
+      <button id="close-modal" class="btn btn-secondary" type="button">Cerrar</button>
+    </div>
+    <form id="app-form">
+      <div class="sheet-body">
+        <input type="hidden" id="f-id">
+        <div class="grid two">
+          <div class="field">
+            <label for="f-nombre">Nombre *</label>
+            <input id="f-nombre" class="input" maxlength="120" required placeholder="Ej. Estadísticas SST">
+          </div>
+          <div class="field">
+            <label for="f-slug">Slug</label>
+            <input id="f-slug" class="input" placeholder="estadisticas-sst">
+            <div class="hint">Puedes dejarlo vacío y se generará desde el nombre.</div>
+          </div>
+          <div class="field">
+            <label for="f-titulo">Título corto</label>
+            <input id="f-titulo" class="input" maxlength="160" placeholder="Indicadores de accidentalidad">
+          </div>
+          <div class="field">
+            <label for="f-categoria">Categoría *</label>
+            <input id="f-categoria" class="input" maxlength="80" required placeholder="Gestión SST">
+          </div>
+          <div class="field">
+            <label for="f-tipo">Tipo *</label>
+            <select id="f-tipo" class="select">
+              <option value="aplicacion">Aplicación</option>
+              <option value="servicio">Servicio del ecosistema</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-estado">Estado *</label>
+            <select id="f-estado" class="select">
+              <option>Disponible</option>
+              <option>Nueva</option>
+              <option>Beta</option>
+              <option>Próximamente</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-url">URL</label>
+            <input id="f-url" class="input" type="url" placeholder="https://...">
+          </div>
+          <div class="field">
+            <label for="f-imagen">Imagen URL</label>
+            <input id="f-imagen" class="input" type="url" placeholder="https://...">
+          </div>
+          <div class="field">
+            <label for="f-norma">Norma / referencia</label>
+            <input id="f-norma" class="input" maxlength="180" placeholder="ISO 21502:2020">
+          </div>
+          <div class="field">
+            <label for="f-icono">Icono</label>
+            <select id="f-icono" class="select">
+              <option value="toolbox">Herramientas</option>
+              <option value="chart">Estadísticas</option>
+              <option value="project">Proyecto</option>
+              <option value="clipboard">Documento</option>
+              <option value="shield">Seguridad</option>
+              <option value="fire">Emergencias</option>
+              <option value="users">Comunidad</option>
+              <option value="book">Biblioteca</option>
+              <option value="graduation">Academia</option>
+              <option value="map">Mapa</option>
+              <option value="calculator">Calculadora</option>
+              <option value="ergonomics">Ergonomía</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-orden">Orden</label>
+            <input id="f-orden" class="input" type="number" min="0" max="100000" value="100">
+          </div>
+          <div class="field">
+            <label for="f-etiquetas">Etiquetas</label>
+            <input id="f-etiquetas" class="input" placeholder="Excel, PDF, ISO">
+            <div class="hint">Separadas por comas.</div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:14px">
+          <label for="f-descripcion">Descripción *</label>
+          <textarea id="f-descripcion" class="textarea" maxlength="1200" required placeholder="Describe qué hace la aplicación y para qué sirve."></textarea>
+        </div>
+
+        <div class="field" style="margin-top:14px">
+          <label for="f-necesidad">¿Qué necesita hacer el profesional?</label>
+          <input id="f-necesidad" class="input" maxlength="220" placeholder="Ej. Calcular indicadores de accidentalidad">
+        </div>
+
+        <div class="checks" style="margin-top:14px">
+          <label class="check"><input id="f-destacada" type="checkbox"> Destacada</label>
+          <label class="check"><input id="f-publicada" type="checkbox"> Publicada</label>
+          <label class="check"><input id="f-archivada" type="checkbox"> Archivada</label>
+        </div>
+
+        <div id="form-error" class="error" role="alert"></div>
+      </div>
+      <div class="sheet-actions">
+        <button id="cancel-btn" class="btn btn-secondary" type="button">Cancelar</button>
+        <button id="save-btn" class="btn btn-primary" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div><strong>La Movida SST Plus</strong><br><span style="font-size:.78rem">De la reacción a la prevención</span></div>
+    <div><a href="/" target="_self">Aplicaciones SST</a> · <a href="https://www.movidasst.com/" target="_self">www.movidasst.com</a></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+'use strict';
+
+const SUPABASE_URL='https://lfdmbkzghnwvsapxypvt.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_bRnkA6PA8-v073nrw9zxiQ_8rVGiOn1';
+
+const sb=window.supabase?.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{
+  auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}
+})||null;
+
+const auth={cedula:'',codigo:''};
+let items=[];
+
+const $=id=>document.getElementById(id);
+
+function show(el,msg){
+  el.textContent=msg||'';
+  el.classList.toggle('show',Boolean(msg));
+}
+function normalizeCedula(v){return String(v||'').replace(/\D/g,'').slice(0,12)}
+function normalizeCodigo(v){return String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,5)}
+function fmtDate(v){
+  if(!v)return '';
+  try{return new Intl.DateTimeFormat('es-VE',{dateStyle:'medium',timeStyle:'short'}).format(new Date(v))}catch{return String(v)}
+}
+function safeText(v){return String(v??'')}
+function tagsFromInput(v){return String(v||'').split(',').map(x=>x.trim()).filter(Boolean).slice(0,20)}
+function slugify(v){
+  return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,100);
+}
+
+$('cedula').addEventListener('input',e=>e.target.value=normalizeCedula(e.target.value));
+$('codigo').addEventListener('input',e=>e.target.value=normalizeCodigo(e.target.value));
+
+$('login-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  show($('login-error'),'');
+  const cedula=normalizeCedula($('cedula').value);
+  const codigo=normalizeCodigo($('codigo').value);
+  if(cedula.length<5){show($('login-error'),'Ingresa una cédula válida.');return}
+  if(!/^[A-Z0-9]{5}$/.test(codigo)){show($('login-error'),'El código debe tener exactamente 5 caracteres.');return}
+  if(!sb){show($('login-error'),'No se pudo iniciar la conexión con Supabase.');return}
+  $('login-btn').disabled=true;
+  $('login-loading').classList.add('show');
+  try{
+    const {data,error}=await sb.rpc('catalogo_admin_listar',{p_cedula:cedula,p_codigo:codigo});
+    if(error)throw error;
+    auth.cedula=cedula;auth.codigo=codigo;
+    items=Array.isArray(data)?data:[];
+    $('codigo').value='';
+    $('login-shell').style.display='none';
+    $('admin').classList.add('show');
+    render();
+  }catch(err){
+    auth.cedula='';auth.codigo='';
+    show($('login-error'),'Acceso no autorizado o no fue posible validar las credenciales.');
+    console.error(err);
+  }finally{
+    $('login-btn').disabled=false;
+    $('login-loading').classList.remove('show');
+  }
+});
+
+async function reloadCatalog(){
+  show($('admin-error'),'');show($('admin-message'),'');
+  const {data,error}=await sb.rpc('catalogo_admin_listar',{p_cedula:auth.cedula,p_codigo:auth.codigo});
+  if(error){show($('admin-error'),'No se pudo actualizar el catálogo.');console.error(error);return}
+  items=Array.isArray(data)?data:[];
+  render();
+}
+
+function render(){
+  const q=String($('admin-search').value||'').toLowerCase().trim();
+  const filtered=items.filter(i=>[
+    i.nombre,i.slug,i.categoria,i.tipo,i.estado,i.norma,i.descripcion,(i.etiquetas||[]).join(' ')
+  ].join(' ').toLowerCase().includes(q));
+  $('stats').textContent=`${items.length} registro${items.length===1?'':'s'} · ${items.filter(x=>x.publicada&&!x.archivada).length} publicado${items.filter(x=>x.publicada&&!x.archivada).length===1?'':'s'}`;
+  const list=$('list');list.innerHTML='';
+  if(!filtered.length){
+    const e=document.createElement('div');e.className='card empty';
+    e.innerHTML='<h3>No hay registros</h3><p>Crea la primera aplicación con el botón “Nueva aplicación”.</p>';
+    list.appendChild(e);return;
+  }
+  filtered.forEach(item=>list.appendChild(buildItem(item)));
+}
+
+function buildItem(item){
+  const el=document.createElement('article');el.className='card item';
+  const top=document.createElement('div');top.className='item-top';
+  const icon=document.createElement('div');icon.className='item-icon';icon.textContent=(item.tipo==='servicio'?'S':'A');
+  const main=document.createElement('div');main.className='item-main';
+  const title=document.createElement('div');title.className='item-title';
+  const h=document.createElement('h3');h.textContent=item.nombre||'Sin nombre';title.appendChild(h);
+  if(item.publicada&&!item.archivada){const b=document.createElement('span');b.className='badge pub';b.textContent='Publicada';title.appendChild(b)}
+  if(item.destacada){const b=document.createElement('span');b.className='badge dest';b.textContent='Destacada';title.appendChild(b)}
+  if(item.archivada){const b=document.createElement('span');b.className='badge arch';b.textContent='Archivada';title.appendChild(b)}
+  main.appendChild(title);
+  const meta=document.createElement('div');meta.className='meta';meta.textContent=`${item.tipo||'aplicacion'} · ${item.categoria||'Sin categoría'} · ${item.estado||''} · orden ${item.orden ?? 100}`;main.appendChild(meta);
+  if(item.updated_at){const d=document.createElement('div');d.className='meta';d.textContent=`Actualizada: ${fmtDate(item.updated_at)}`;main.appendChild(d)}
+  const desc=document.createElement('p');desc.className='desc';desc.textContent=item.descripcion||'';main.appendChild(desc);
+  top.appendChild(icon);top.appendChild(main);el.appendChild(top);
+
+  const actions=document.createElement('div');actions.className='item-actions';
+  const edit=button('Editar','btn btn-secondary',()=>openForm(item));
+  actions.appendChild(edit);
+
+  if(!item.archivada){
+    actions.appendChild(button(item.publicada?'Ocultar':'Publicar',item.publicada?'btn btn-secondary':'btn btn-green',()=>quickPublish(item,!item.publicada)));
+    actions.appendChild(button('Archivar','btn btn-danger',()=>quickArchive(item,true)));
+  }else{
+    actions.appendChild(button('Restaurar','btn btn-green',()=>quickArchive(item,false)));
+  }
+  el.appendChild(actions);
+  return el;
+}
+
+function button(text,cls,fn){
+  const b=document.createElement('button');b.type='button';b.className=cls;b.textContent=text;b.addEventListener('click',fn);return b;
+}
+
+$('admin-search').addEventListener('input',render);
+$('refresh-btn').addEventListener('click',reloadCatalog);
+$('new-btn').addEventListener('click',()=>openForm(null));
+$('logout-btn').addEventListener('click',()=>{
+  auth.cedula='';auth.codigo='';items=[];
+  $('admin').classList.remove('show');$('login-shell').style.display='block';
+  $('cedula').value='';$('codigo').value='';$('admin-search').value='';
+});
+
+function resetForm(){
+  $('app-form').reset();
+  $('f-id').value='';
+  $('f-categoria').value='Gestión SST';
+  $('f-tipo').value='aplicacion';
+  $('f-estado').value='Disponible';
+  $('f-icono').value='toolbox';
+  $('f-orden').value='100';
+  show($('form-error'),'');
+}
+
+function openForm(item){
+  resetForm();
+  $('modal-title').textContent=item?'Editar aplicación':'Nueva aplicación';
+  if(item){
+    $('f-id').value=item.id??'';
+    $('f-nombre').value=item.nombre??'';
+    $('f-slug').value=item.slug??'';
+    $('f-titulo').value=item.titulo_corto??'';
+    $('f-categoria').value=item.categoria??'Gestión SST';
+    $('f-tipo').value=item.tipo??'aplicacion';
+    $('f-estado').value=item.estado??'Disponible';
+    $('f-url').value=item.url??'';
+    $('f-imagen').value=item.imagen_url??'';
+    $('f-norma').value=item.norma??'';
+    $('f-icono').value=item.icono??'toolbox';
+    $('f-orden').value=item.orden??100;
+    $('f-etiquetas').value=Array.isArray(item.etiquetas)?item.etiquetas.join(', '):'';
+    $('f-descripcion').value=item.descripcion??'';
+    $('f-necesidad').value=item.necesidad??'';
+    $('f-destacada').checked=Boolean(item.destacada);
+    $('f-publicada').checked=Boolean(item.publicada);
+    $('f-archivada').checked=Boolean(item.archivada);
+  }
+  $('modal').classList.add('open');$('modal').setAttribute('aria-hidden','false');
+  setTimeout(()=>$('f-nombre').focus(),50);
+}
+function closeForm(){
+  $('modal').classList.remove('open');$('modal').setAttribute('aria-hidden','true');
+}
+$('close-modal').addEventListener('click',closeForm);
+$('cancel-btn').addEventListener('click',closeForm);
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeForm()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('modal').classList.contains('open'))closeForm()});
+
+$('f-nombre').addEventListener('blur',()=>{
+  if(!$('f-slug').value.trim())$('f-slug').value=slugify($('f-nombre').value);
+});
+
+$('app-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  show($('form-error'),'');
+  const nombre=$('f-nombre').value.trim();
+  const descripcion=$('f-descripcion').value.trim();
+  const categoria=$('f-categoria').value.trim();
+  if(nombre.length<2){show($('form-error'),'El nombre debe tener al menos 2 caracteres.');return}
+  if(descripcion.length<10){show($('form-error'),'La descripción debe tener al menos 10 caracteres.');return}
+  if(categoria.length<2){show($('form-error'),'La categoría es obligatoria.');return}
+
+  const datos={
+    slug:$('f-slug').value.trim()||slugify(nombre),
+    nombre,
+    titulo_corto:$('f-titulo').value.trim(),
+    descripcion,
+    url:$('f-url').value.trim(),
+    categoria,
+    tipo:$('f-tipo').value,
+    norma:$('f-norma').value.trim(),
+    necesidad:$('f-necesidad').value.trim(),
+    imagen_url:$('f-imagen').value.trim(),
+    icono:$('f-icono').value,
+    etiquetas:tagsFromInput($('f-etiquetas').value),
+    estado:$('f-estado').value,
+    destacada:$('f-destacada').checked,
+    publicada:$('f-publicada').checked,
+    archivada:$('f-archivada').checked,
+    orden:Number($('f-orden').value||100)
+  };
+  if($('f-id').value)datos.id=Number($('f-id').value);
+
+  $('save-btn').disabled=true;
+  try{
+    const {data,error}=await sb.rpc('catalogo_admin_guardar',{
+      p_cedula:auth.cedula,p_codigo:auth.codigo,p_datos:datos
+    });
+    if(error)throw error;
+    closeForm();
+    show($('admin-message'),data?.message||'Guardado correctamente.');
+    await reloadCatalog();
+  }catch(err){
+    show($('form-error'),err?.message||'No se pudo guardar.');
+    console.error(err);
+  }finally{$('save-btn').disabled=false}
+});
+
+async function quickPublish(item,value){
+  if(value&&item.estado!=='Próximamente'&&!item.url){
+    show($('admin-error'),'No puedes publicar esta aplicación sin una URL válida.');return;
+  }
+  const {data,error}=await sb.rpc('catalogo_admin_publicar',{
+    p_cedula:auth.cedula,p_codigo:auth.codigo,p_id:item.id,p_publicada:value
+  });
+  if(error){show($('admin-error'),error.message||'No se pudo cambiar la publicación.');return}
+  show($('admin-message'),data?.message||'Estado actualizado.');
+  await reloadCatalog();
+}
+
+async function quickArchive(item,value){
+  const ok=confirm(value?'¿Archivar esta aplicación? Se ocultará del portal, pero no se eliminará.':'¿Restaurar esta aplicación?');
+  if(!ok)return;
+  const {data,error}=await sb.rpc('catalogo_admin_archivar',{
+    p_cedula:auth.cedula,p_codigo:auth.codigo,p_id:item.id,p_archivar:value
+  });
+  if(error){show($('admin-error'),error.message||'No se pudo cambiar el archivo.');return}
+  show($('admin-message'),data?.message||'Estado actualizado.');
+  await reloadCatalog();
+}
+</script>
+</body>
+</html>
