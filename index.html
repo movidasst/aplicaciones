@@ -3,548 +3,774 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Administrar Aplicaciones SST | La Movida SST Plus</title>
-  <meta name="description" content="Panel privado de administración del catálogo de Aplicaciones SST de La Movida SST Plus.">
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+  <title>Aplicaciones SST y Herramientas Digitales | La Movida SST</title>
+  <meta name="description" content="Aplicaciones y herramientas digitales para profesionales de Seguridad y Salud en el Trabajo: gestión SST, proyectos, riesgos, ergonomía, emergencias y más.">
   <meta name="theme-color" content="#0B2A6F">
-  <link rel="canonical" href="https://aplicaciones.movidasst.com/admin/">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="La Movida SST">
+  <meta name="application-name" content="Aplicaciones SST - La Movida SST">
+  <meta name="keywords" content="aplicaciones SST, herramientas SST, seguridad y salud en el trabajo, prevención de riesgos laborales, gestión SST, ergonomía, emergencias, ISO SST, Venezuela">
+  <link rel="canonical" href="https://aplicaciones.movidasst.com/">
+  <link rel="alternate" hreflang="es-VE" href="https://aplicaciones.movidasst.com/">
+  <link rel="alternate" hreflang="x-default" href="https://aplicaciones.movidasst.com/">
+  <link rel="sitemap" type="application/xml" href="https://aplicaciones.movidasst.com/sitemap.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aplicaciones.movidasst.com/">
+  <meta property="og:title" content="Aplicaciones SST y Herramientas Digitales | La Movida SST">
+  <meta property="og:description" content="Centro de aplicaciones de La Movida SST para analizar, planificar, evaluar y documentar la gestión de Seguridad y Salud en el Trabajo.">
+  <meta property="og:locale" content="es_VE">
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+  <meta property="og:image:alt" content="La Movida SST - Centro de Aplicaciones SST">
+  <meta property="og:site_name" content="La Movida SST Plus">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aplicaciones SST y Herramientas Digitales | La Movida SST">
+  <meta name="twitter:description" content="Herramientas digitales para profesionales de SST: gestión, proyectos, riesgos, ergonomía, emergencias y más.">
+  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.movidasst.com/#organization",
+        "name": "La Movida SST",
+        "url": "https://www.movidasst.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aplicaciones.movidasst.com/#website",
+        "url": "https://aplicaciones.movidasst.com/",
+        "name": "Aplicaciones SST - La Movida SST",
+        "description": "Centro de aplicaciones y herramientas digitales para profesionales de Seguridad y Salud en el Trabajo.",
+        "inLanguage": "es-VE",
+        "publisher": {"@id": "https://www.movidasst.com/#organization"}
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://aplicaciones.movidasst.com/#webpage",
+        "url": "https://aplicaciones.movidasst.com/",
+        "name": "Aplicaciones SST y Herramientas Digitales | La Movida SST",
+        "description": "Catálogo de herramientas digitales para apoyar la gestión profesional de Seguridad y Salud en el Trabajo.",
+        "isPartOf": {"@id": "https://aplicaciones.movidasst.com/#website"},
+        "about": {"@id": "https://www.movidasst.com/#organization"},
+        "inLanguage": "es-VE"
+      }
+    ]
+  }
+  </script>
+
   <style>
-    :root{
-      --navy:#0B2A6F;--petrol:#006D8F;--green:#58B947;--yellow:#F4C430;--blue:#0038A8;--red:#CF142B;
-      --ink:#172033;--muted:#64748b;--line:#dfe7ef;--bg:#f5f8fb;--surface:#fff;--danger:#b42318;
-      --shadow:0 16px 42px rgba(15,41,71,.10);--max:1180px;
+    :root {
+      --navy:#0B2A6F;
+      --petrol:#006D8F;
+      --turquoise:#00AFC5;
+      --green:#58B947;
+      --flag-yellow:#F4C430;
+      --flag-blue:#0038A8;
+      --flag-red:#CF142B;
+      --ink:#172033;
+      --muted:#64748b;
+      --line:#dfe7ef;
+      --bg:#f5f8fb;
+      --surface:#ffffff;
+      --soft:#eef6f8;
+      --danger:#b42318;
+      --warning:#b54708;
+      --shadow:0 18px 50px rgba(15, 41, 71, .10);
+      --shadow-sm:0 8px 24px rgba(15, 41, 71, .08);
+      --radius:22px;
+      --max:1180px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    button,input,textarea,select{font:inherit}
-    button,a{-webkit-tap-highlight-color:transparent}
-    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(0,109,143,.22);outline-offset:2px}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(0,175,197,.10), transparent 30rem),
+        radial-gradient(circle at 100% 0%, rgba(88,185,71,.08), transparent 26rem),
+        var(--bg);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    button,input{font:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent; }
+    button:focus-visible,a:focus-visible,input:focus-visible{
+      outline:3px solid rgba(0,175,197,.28);
+      outline-offset:3px;
+    }
     .wrap{width:min(100% - 28px,var(--max));margin-inline:auto}
-    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .topbar:after{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
-    .topbar-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .topbar{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(223,231,239,.9);
+    }
+    .topbar::after{
+      content:"";
+      display:block;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%);
+    }
+    .topbar-inner{
+      min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
     .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
-    .brand img{width:54px;height:54px;object-fit:contain;background:#fff;padding:4px;border-radius:15px;box-shadow:0 8px 22px rgba(11,42,111,.08)}
-    .brand strong{display:block;color:var(--navy);font-size:.98rem}
-    .brand span{display:block;color:var(--petrol);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+    .brand img{width:56px;height:56px;object-fit:contain;border-radius:16px;background:#fff;padding:4px;box-shadow:0 10px 24px rgba(11,42,111,.08)}
+    .brand-copy{min-width:0}
+    .brand-copy strong{display:block;color:var(--navy);font-size:.98rem;line-height:1.05;white-space:nowrap}
+    .brand-copy span{display:block;color:var(--petrol);font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
     .top-actions{display:flex;align-items:center;gap:8px}
-    .btn{min-height:44px;border:0;border-radius:13px;padding:0 15px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
-    .btn-primary{background:linear-gradient(135deg,var(--navy),var(--petrol));color:#fff}
-    .btn-secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
-    .btn-soft{background:#eef5f8;color:var(--petrol)}
-    .btn-danger{background:#fff1f2;color:#b42318;border:1px solid #fecdd3}
-    .btn-green{background:#edf8ea;color:#2f7d23;border:1px solid #cde8c5}
-    .btn:disabled{opacity:.55;cursor:not-allowed}
-    .page{padding:28px 0 50px}
-    .hero{background:linear-gradient(135deg,#0B2A6F,#075779 62%,#007f91);color:#fff;border-radius:26px;padding:24px 20px 32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
-    .hero-brand{display:flex;align-items:center;gap:14px;position:relative}
-    .hero-brand img{width:70px;height:70px;object-fit:contain;background:#fff;padding:6px;border-radius:20px}
-    .hero h1{margin:18px 0 8px;font-size:clamp(1.8rem,7vw,3.4rem);line-height:1;letter-spacing:-.04em}
-    .hero p{margin:0;color:#d8edf3;line-height:1.55;max-width:760px}
-    .notice{margin-top:16px;background:#fffbea;border:1px solid #f3df9a;color:#6b5808;border-radius:16px;padding:13px 14px;font-size:.85rem;line-height:1.55}
-    .card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 8px 26px rgba(15,41,71,.06)}
-    .login-shell{max-width:560px;margin:22px auto 0}
-    .login-card{padding:20px}
-    .login-card h2{margin:0 0 6px;color:var(--navy);font-size:1.35rem}
-    .login-card p{margin:0 0 18px;color:var(--muted);font-size:.9rem;line-height:1.55}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    .field label{display:block;font-size:.78rem;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.045em;margin:0 0 7px}
-    .input,.textarea,.select{width:100%;border:1px solid #cfdbe6;background:#fff;color:var(--ink);border-radius:13px;padding:12px 13px;min-height:46px}
-    .textarea{min-height:110px;resize:vertical;line-height:1.5}
-    .hint{font-size:.75rem;color:var(--muted);margin-top:5px;line-height:1.4}
-    .error{display:none;margin-top:12px;background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;padding:11px 12px;border-radius:13px;font-size:.84rem;line-height:1.45}
-    .error.show{display:block}
-    .success{display:none;margin-top:12px;background:#effaf0;border:1px solid #c7e9c8;color:#246b28;padding:11px 12px;border-radius:13px;font-size:.84rem;line-height:1.45}
-    .success.show{display:block}
-    .admin{display:none;margin-top:22px}
-    .admin.show{display:block}
-    .toolbar{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-    .toolbar-left,.toolbar-right{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .search{flex:1;min-width:210px}
-    .stats{font-size:.82rem;font-weight:900;color:var(--petrol);background:#eaf6f8;border-radius:999px;padding:8px 10px}
-    .list{display:grid;grid-template-columns:1fr;gap:12px}
-    .item{padding:16px}
-    .item-top{display:flex;gap:12px;align-items:flex-start}
-    .item-icon{width:50px;height:50px;flex:0 0 auto;border-radius:15px;background:#eaf6f8;color:var(--navy);display:grid;place-items:center;font-weight:900}
-    .item-main{min-width:0;flex:1}
-    .item-title{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .item-title h3{margin:0;font-size:1.05rem;color:var(--ink)}
-    .badge{font-size:.68rem;font-weight:900;border-radius:999px;padding:5px 8px;background:#f1f5f9;color:#475569}
-    .badge.pub{background:#dcfce7;color:#166534}
-    .badge.arch{background:#fee2e2;color:#991b1b}
-    .badge.dest{background:#e0f2fe;color:#075985}
-    .meta{margin-top:5px;color:var(--muted);font-size:.78rem;line-height:1.4}
-    .desc{margin:10px 0 0;color:#475569;font-size:.86rem;line-height:1.5}
-    .item-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-    .item-actions .btn{min-height:38px;padding:0 11px;font-size:.78rem}
-    .empty{text-align:center;padding:32px 18px;color:var(--muted)}
-    .empty h3{color:var(--navy);margin:0 0 8px}
-    .modal{position:fixed;inset:0;background:rgba(7,28,60,.55);z-index:100;display:none;align-items:flex-end;justify-content:center;padding:0}
-    .modal.open{display:flex}
-    .sheet{background:#fff;width:100%;max-height:94vh;overflow:auto;border-radius:24px 24px 0 0;box-shadow:0 -16px 50px rgba(7,28,60,.22)}
-    .sheet-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:3}
-    .sheet-head h2{margin:0;color:var(--navy);font-size:1.15rem}
-    .sheet-body{padding:16px}
-    .checks{display:grid;grid-template-columns:1fr;gap:10px}
-    .check{display:flex;align-items:center;gap:9px;padding:11px;border:1px solid var(--line);border-radius:13px;background:#f8fafc}
-    .check input{width:18px;height:18px}
-    .sheet-actions{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:13px 16px;display:flex;gap:9px}
-    .sheet-actions .btn{flex:1}
-    .loading{display:none;margin-top:14px;text-align:center;color:var(--muted);font-size:.86rem}
-    .loading.show{display:block}
-    footer{margin-top:30px;background:#071c3c;color:#cddce8;padding:26px 0 calc(26px + env(safe-area-inset-bottom));position:relative}
-    footer:before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--yellow) 0 33.33%,var(--blue) 33.33% 66.66%,var(--red) 66.66% 100%)}
-    .footer-inner{display:flex;flex-direction:column;gap:12px}
-    .footer-inner a{color:#fff;text-decoration:none;font-weight:800}
-    @media(min-width:700px){
+    .icon-btn,.ghost-btn,.primary-btn,.secondary-btn{
+      min-height:44px;border:0;border-radius:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .icon-btn{width:44px;background:#f1f5f9;color:var(--navy)}
+    .ghost-btn{padding:0 14px;background:#f1f5f9;color:var(--navy);font-size:.9rem}.home-btn{padding:0 15px;background:linear-gradient(135deg,var(--navy),var(--flag-blue));color:#fff;box-shadow:0 8px 20px rgba(11,42,111,.16);font-size:.86rem}
+    .primary-btn{padding:0 18px;background:linear-gradient(135deg,var(--navy),var(--petrol));color:#fff;box-shadow:0 10px 24px rgba(11,42,111,.18)}
+    .secondary-btn{padding:0 18px;background:#fff;color:var(--navy);border:1px solid var(--line)}
+
+    .hero{padding:34px 0 20px}
+    .hero-card{
+      position:relative;overflow:hidden;
+      background:linear-gradient(135deg,#0B2A6F 0%,#075779 58%,#007f91 100%);
+      color:#fff;border-radius:28px;padding:26px 20px 36px;box-shadow:var(--shadow);
+    }
+    .hero-card::marker{content:''}
+    .hero-flagbar{
+      position:absolute;left:0;right:0;bottom:0;height:9px;
+      background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%);
+    }
+    .hero-brand{position:relative;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+    .hero-brand img{width:72px;height:72px;object-fit:contain;border-radius:20px;background:#fff;padding:6px;box-shadow:0 14px 30px rgba(7,28,60,.22)}
+    .hero-brand-copy{min-width:0}
+    .hero-brand-copy strong{display:block;font-size:1.08rem;line-height:1.05;color:#fff}
+    .hero-brand-copy span{display:block;margin-top:6px;color:#ffeaa1;font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+    .hero-card:before{width:220px;height:220px;right:-90px;top:-90px;background:rgba(255,255,255,.08)}
+    .hero-card:after{width:190px;height:190px;left:-110px;bottom:-120px;background:rgba(88,185,71,.16)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:#c9f5fb;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:8px 10px;border-radius:999px}
+    .hero h1{position:relative;margin:16px 0 10px;font-size:clamp(2rem,8vw,4.3rem);line-height:.98;letter-spacing:-.045em;max-width:850px}
+    .hero p{position:relative;margin:0;max-width:760px;color:#d8edf3;font-size:1rem;line-height:1.62}
+    .hero-meta{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .meta-pill{font-size:.78rem;font-weight:800;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);padding:8px 10px;border-radius:999px;color:#ecfbff}
+
+    .search-shell{position:relative;margin-top:-2px;padding:18px 0 8px}
+    .search-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:20px;padding:10px}
+    .search-row{display:flex;gap:8px;align-items:center}
+    .search-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--petrol);flex:0 0 auto}
+    .search-input{width:100%;height:48px;border:0;outline:0;background:transparent;color:var(--ink);font-size:1rem;min-width:0}
+    .search-input::placeholder{color:#94a3b8}
+    .clear-btn{border:0;background:#f1f5f9;color:#64748b;border-radius:12px;min-width:42px;height:42px;cursor:pointer;display:none}
+    .clear-btn.show{display:block}
+    .category-scroll{display:flex;gap:8px;overflow:auto;padding:12px 2px 3px;scrollbar-width:none}
+    .category-scroll::-webkit-scrollbar{display:none}
+    .chip{white-space:nowrap;min-height:40px;border:1px solid var(--line);background:#fff;color:#475569;padding:0 14px;border-radius:999px;font-weight:800;font-size:.84rem;cursor:pointer}
+    .chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+
+    .section{padding:24px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}
+    .section-title{margin:0;font-size:1.45rem;letter-spacing:-.03em;color:var(--navy);position:relative;padding-bottom:10px}.section-title::after{content:"";position:absolute;left:0;bottom:0;width:92px;height:5px;border-radius:999px;background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%)}
+    .section-sub{margin:5px 0 0;color:var(--muted);font-size:.93rem;line-height:1.5}
+    .section-count{font-size:.8rem;font-weight:900;color:var(--petrol);background:#e9f6f8;padding:8px 10px;border-radius:999px;white-space:nowrap}
+
+    .featured-grid,.cards-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .app-card{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+      transition:transform .2s ease, box-shadow .2s ease,border-color .2s ease;
+      min-width:0;
+    }
+    .app-card:focus-within{border-color:#9bdde4}
+    .card-cover{height:132px;background:linear-gradient(135deg,#e9f5f8,#eef8eb);position:relative;overflow:hidden}
+    .card-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .cover-fallback{height:100%;display:flex;align-items:center;justify-content:center;background:
+      radial-gradient(circle at 70% 15%,rgba(0,175,197,.18),transparent 45%),
+      linear-gradient(135deg,#e9f4f8,#f7fbfc)}
+    .app-icon{width:66px;height:66px;border-radius:20px;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 12px 28px rgba(11,42,111,.14)}
+    .app-icon svg{width:34px;height:34px}
+    .card-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+    .badge{display:inline-flex;align-items:center;min-height:28px;border-radius:999px;padding:0 10px;font-size:.7rem;font-weight:900;letter-spacing:.03em;background:#fff;color:var(--navy);box-shadow:0 5px 16px rgba(15,23,42,.12)}
+    .badge.nueva{color:#075985;background:#e0f2fe}
+    .badge.beta{color:#92400e;background:#fef3c7}
+    .badge.proximamente{color:#475569;background:#f1f5f9}
+    .badge.disponible{color:#166534;background:#dcfce7}
+    .card-body{padding:18px}
+    .card-kicker{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:var(--petrol);font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    .card-title{margin:8px 0 5px;font-size:1.22rem;letter-spacing:-.025em;color:var(--ink)}
+    .card-short{margin:0 0 10px;color:#475569;font-weight:700;font-size:.9rem}
+    .card-desc{margin:0;color:var(--muted);font-size:.9rem;line-height:1.58;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .tag{font-size:.7rem;font-weight:800;color:#475569;background:#f1f5f9;padding:6px 8px;border-radius:8px}
+    .card-footer{padding:0 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .open-link{min-height:44px;border-radius:13px;padding:0 15px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:1}
+    .open-link.disabled{background:#e2e8f0;color:#64748b;pointer-events:none}
+    .type-label{font-size:.72rem;font-weight:900;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
+
+    .needs-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    .need-card{border:1px solid var(--line);background:#fff;border-radius:17px;padding:14px;display:flex;gap:12px;align-items:center;text-decoration:none;box-shadow:0 4px 16px rgba(15,41,71,.05);min-height:76px}
+    .need-icon{width:46px;height:46px;flex:0 0 auto;border-radius:14px;background:#e9f6f8;color:var(--petrol);display:grid;place-items:center}
+    .need-icon svg{width:24px;height:24px}
+    .need-copy{min-width:0}
+    .need-copy strong{display:block;font-size:.95rem;line-height:1.25;color:var(--ink)}
+    .need-copy span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+    .need-arrow{margin-left:auto;color:var(--petrol);font-weight:900}
+
+    .empty,.error-box,.loading-box{border:1px dashed #b9c8d8;background:rgba(255,255,255,.72);border-radius:22px;padding:28px 18px;text-align:center;color:var(--muted)}
+    .empty-icon{width:62px;height:62px;border-radius:20px;margin:0 auto 12px;background:#e9f6f8;color:var(--petrol);display:grid;place-items:center}
+    .empty-icon svg{width:32px;height:32px}
+    .empty h3,.error-box h3{margin:0 0 8px;color:var(--navy);font-size:1.1rem}
+    .empty p,.error-box p{margin:0 auto;max-width:620px;line-height:1.6;font-size:.9rem}
+    .retry-btn{margin-top:14px;min-height:44px;border:0;border-radius:13px;background:var(--navy);color:#fff;padding:0 16px;font-weight:900;cursor:pointer}
+    .skeleton{height:260px;border-radius:22px;background:linear-gradient(90deg,#edf2f7 25%,#f7fafc 38%,#edf2f7 63%);background-size:400% 100%;animation:shine 1.25s infinite}
+    @keyframes shine{0%{background-position:100% 0}100%{background-position:-100% 0}}
+
+    .notice{margin:24px 0 0;border:1px solid #cae7e9;background:#f2fbfb;border-radius:18px;padding:15px;display:flex;gap:12px;align-items:flex-start;color:#315569}
+    .notice svg{width:22px;height:22px;flex:0 0 auto;color:var(--petrol)}
+    .notice p{margin:0;font-size:.84rem;line-height:1.55}
+
+    footer{margin-top:28px;background:#071c3c;color:#dbe8f4;padding:28px 0 calc(28px + env(safe-area-inset-bottom));position:relative}
+    footer::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%)}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:56px;height:56px;object-fit:contain;background:#fff;border-radius:16px;padding:4px}
+    .footer-brand strong{display:block;color:#fff}
+    .footer-brand span{display:block;color:#9fc5d5;font-size:.8rem;margin-top:4px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px 16px}
+    .footer-links a{color:#c7dae7;text-decoration:none;font-weight:700;font-size:.84rem}
+    .footer-note{color:#89a8bb;font-size:.76rem;line-height:1.5}
+
+    .hidden{display:none!important}
+
+    @media (min-width:640px){
       .wrap{width:min(100% - 40px,var(--max))}
-      .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .toolbar{flex-direction:row;justify-content:space-between;align-items:center}
-      .list{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .modal{align-items:center;padding:24px}
-      .sheet{max-width:820px;border-radius:24px;max-height:90vh}
-      .checks{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .footer-inner{flex-direction:row;justify-content:space-between;align-items:center}
+      .hero-card{padding:34px 32px}
+      .needs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards-grid,.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .footer-grid{grid-template-columns:1.2fr .8fr;align-items:center}
+      .footer-links{justify-content:flex-end}
+    }
+    @media (min-width:920px){
+      .hero{padding-top:48px}
+      .hero-card{padding:48px 44px}
+      .search-shell{margin-top:-28px;position:relative;z-index:5}
+      .search-card{padding:12px 14px}
+      .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .needs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .app-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(15,41,71,.13);border-color:#b9dfe4}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
     }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="/index.html" target="_self" aria-label="Volver al portal de aplicaciones">
-      <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus">
-      <div><strong>La Movida SST Plus</strong><span>Administración de aplicaciones</span></div>
-    </a>
-    <div class="top-actions">
-      <a class="btn btn-secondary" href="/" target="_self">Portal</a>
-      <a class="btn btn-soft" href="https://www.movidasst.com/" target="_self">MovidaSST.com</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://www.movidasst.com/" target="_self" aria-label="Volver a la página principal de La Movida SST">
+        <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="eager">
+        <div class="brand-copy">
+          <strong>La Movida SST Plus</strong>
+          <span>Aplicaciones SST</span>
+        </div>
+      </a>
+      <div class="top-actions">
+        <a class="ghost-btn home-btn" href="https://www.movidasst.com/" target="_self" aria-label="Ir a la página principal de La Movida SST">← Página principal</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="page">
-  <div class="wrap">
+  <main>
     <section class="hero">
-      <div class="hero-brand">
-        <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus">
-        <div><strong>Panel privado</strong><br><span style="color:#ffeaa1;font-weight:900">Catálogo dinámico</span></div>
-      </div>
-      <h1>Administrar Aplicaciones SST</h1>
-      <p>Crea, edita, publica, oculta y archiva aplicaciones sin volver a modificar el código del portal.</p>
-    </section>
-
-    <div class="notice">
-      El código de integrante se utiliza únicamente para validar cada operación administrativa con Supabase y no se guarda en localStorage ni sessionStorage.
-    </div>
-
-    <section id="login-shell" class="login-shell">
-      <div class="card login-card">
-        <h2>Acceso de administración</h2>
-        <p>Ingresa con la cédula y el código de un integrante registrado como <strong>administrador general</strong>.</p>
-        <form id="login-form" novalidate>
-          <div class="grid">
-            <div class="field">
-              <label for="cedula">Cédula</label>
-              <input id="cedula" class="input" type="text" inputmode="numeric" autocomplete="username" placeholder="Ej. 13534591" maxlength="15">
-            </div>
-            <div class="field">
-              <label for="codigo">Código de registro</label>
-              <input id="codigo" class="input" type="password" autocomplete="current-password" placeholder="5 caracteres" maxlength="5">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="hero-brand">
+            <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="eager">
+            <div class="hero-brand-copy">
+              <strong>La Movida SST Plus</strong>
+              <span>Aplicaciones y herramientas profesionales</span>
             </div>
           </div>
-          <button id="login-btn" class="btn btn-primary" type="submit" style="width:100%;margin-top:14px">Ingresar al panel</button>
-          <div id="login-error" class="error" role="alert"></div>
-          <div id="login-loading" class="loading">Validando acceso…</div>
-        </form>
+          <span class="eyebrow">Centro de herramientas profesionales</span>
+          <h1>¿Qué necesitas hacer hoy en SST?</h1>
+          <p>Explora aplicaciones digitales de La Movida SST para analizar, planificar, evaluar y documentar tu gestión desde un solo lugar.</p>
+          <div class="hero-meta">
+            <span class="meta-pill" id="hero-count">Cargando catálogo…</span>
+            <span class="meta-pill">Mobile first</span>
+            <span class="meta-pill">Actualización continua</span>
+            <span class="meta-pill">La Movida SST</span>
+          </div>
+          <div class="hero-flagbar" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
-    <section id="admin" class="admin">
-      <div class="toolbar">
-        <div class="toolbar-left">
-          <button id="new-btn" class="btn btn-primary" type="button">+ Nueva aplicación</button>
-          <span id="stats" class="stats">0 registros</span>
-        </div>
-        <div class="toolbar-right">
-          <input id="admin-search" class="input search" type="search" placeholder="Buscar en el catálogo…">
-          <button id="refresh-btn" class="btn btn-secondary" type="button">Actualizar</button>
-          <button id="logout-btn" class="btn btn-danger" type="button">Salir</button>
+    <section class="search-shell" aria-label="Buscar aplicaciones">
+      <div class="wrap">
+        <div class="search-card">
+          <div class="search-row">
+            <div class="search-icon" aria-hidden="true" id="search-icon"></div>
+            <input id="search" class="search-input" type="search" autocomplete="off" inputmode="search" placeholder="Buscar por nombre, norma, categoría o necesidad…" aria-label="Buscar aplicaciones">
+            <button id="clear-search" class="clear-btn" type="button" aria-label="Limpiar búsqueda">×</button>
+          </div>
+          <div id="category-chips" class="category-scroll" aria-label="Filtrar por categoría"></div>
         </div>
       </div>
-      <div id="admin-message" class="success" role="status"></div>
-      <div id="admin-error" class="error" role="alert"></div>
-      <div id="list" class="list"></div>
     </section>
-  </div>
-</main>
 
-<div id="modal" class="modal" aria-hidden="true">
-  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="sheet-head">
-      <h2 id="modal-title">Nueva aplicación</h2>
-      <button id="close-modal" class="btn btn-secondary" type="button">Cerrar</button>
+    <div class="wrap">
+      <div id="loading" class="section">
+        <div class="cards-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+
+      <section id="error-section" class="section hidden" aria-live="polite">
+        <div class="error-box">
+          <h3>No pudimos cargar el catálogo</h3>
+          <p id="error-message">Comprueba tu conexión e inténtalo nuevamente.</p>
+          <button class="retry-btn" type="button" id="retry-btn">Reintentar</button>
+        </div>
+      </section>
+
+      <section id="empty-section" class="section hidden" aria-live="polite">
+        <div class="empty">
+          <div class="empty-icon" id="empty-icon"></div>
+          <h3>El portal está listo</h3>
+          <p>Todavía no hay aplicaciones publicadas. Cuando publiques la primera desde el panel de administración, aparecerá aquí automáticamente sin modificar este HTML.</p>
+        </div>
+      </section>
+
+      <section id="featured-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Destacadas</h2>
+            <p class="section-sub">Herramientas que queremos poner primero a tu alcance.</p>
+          </div>
+          <span id="featured-count" class="section-count"></span>
+        </div>
+        <div id="featured-grid" class="featured-grid"></div>
+      </section>
+
+      <section id="needs-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">¿Qué necesitas hacer?</h2>
+            <p class="section-sub">Entra por la necesidad profesional, no por el nombre de la aplicación.</p>
+          </div>
+        </div>
+        <div id="needs-grid" class="needs-grid"></div>
+      </section>
+
+      <section id="apps-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Aplicaciones SST</h2>
+            <p class="section-sub">Herramientas para apoyar la gestión técnica y la toma de decisiones.</p>
+          </div>
+          <span id="apps-count" class="section-count"></span>
+        </div>
+        <div id="apps-grid" class="cards-grid"></div>
+      </section>
+
+      <section id="services-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Ecosistema La Movida SST</h2>
+            <p class="section-sub">Servicios, espacios y recursos que forman parte de la comunidad.</p>
+          </div>
+          <span id="services-count" class="section-count"></span>
+        </div>
+        <div id="services-grid" class="cards-grid"></div>
+      </section>
+
+      <section id="no-results" class="section hidden" aria-live="polite">
+        <div class="empty">
+          <div class="empty-icon" id="no-results-icon"></div>
+          <h3>No encontramos coincidencias</h3>
+          <p>Prueba otra palabra o selecciona “Todas” para volver a ver el catálogo completo.</p>
+        </div>
+      </section>
+
+      <div class="notice">
+        <div id="info-icon" aria-hidden="true"></div>
+        <p>Estas herramientas apoyan el trabajo profesional en SST y no sustituyen el juicio técnico, la evaluación específica del contexto ni los requisitos legales aplicables.</p>
+      </div>
     </div>
-    <form id="app-form">
-      <div class="sheet-body">
-        <input type="hidden" id="f-id">
-        <div class="grid two">
-          <div class="field">
-            <label for="f-nombre">Nombre *</label>
-            <input id="f-nombre" class="input" maxlength="120" required placeholder="Ej. Estadísticas SST">
-          </div>
-          <div class="field">
-            <label for="f-slug">Slug</label>
-            <input id="f-slug" class="input" placeholder="estadisticas-sst">
-            <div class="hint">Puedes dejarlo vacío y se generará desde el nombre.</div>
-          </div>
-          <div class="field">
-            <label for="f-titulo">Título corto</label>
-            <input id="f-titulo" class="input" maxlength="160" placeholder="Indicadores de accidentalidad">
-          </div>
-          <div class="field">
-            <label for="f-categoria">Categoría *</label>
-            <input id="f-categoria" class="input" maxlength="80" required placeholder="Gestión SST">
-          </div>
-          <div class="field">
-            <label for="f-tipo">Tipo *</label>
-            <select id="f-tipo" class="select">
-              <option value="aplicacion">Aplicación</option>
-              <option value="servicio">Servicio del ecosistema</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-estado">Estado *</label>
-            <select id="f-estado" class="select">
-              <option>Disponible</option>
-              <option>Nueva</option>
-              <option>Beta</option>
-              <option>Próximamente</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-url">URL</label>
-            <input id="f-url" class="input" type="url" placeholder="https://...">
-          </div>
-          <div class="field">
-            <label for="f-imagen">Imagen URL</label>
-            <input id="f-imagen" class="input" type="url" placeholder="https://...">
-          </div>
-          <div class="field">
-            <label for="f-norma">Norma / referencia</label>
-            <input id="f-norma" class="input" maxlength="180" placeholder="ISO 21502:2020">
-          </div>
-          <div class="field">
-            <label for="f-icono">Icono</label>
-            <select id="f-icono" class="select">
-              <option value="toolbox">Herramientas</option>
-              <option value="chart">Estadísticas</option>
-              <option value="project">Proyecto</option>
-              <option value="clipboard">Documento</option>
-              <option value="shield">Seguridad</option>
-              <option value="fire">Emergencias</option>
-              <option value="users">Comunidad</option>
-              <option value="book">Biblioteca</option>
-              <option value="graduation">Academia</option>
-              <option value="map">Mapa</option>
-              <option value="calculator">Calculadora</option>
-              <option value="ergonomics">Ergonomía</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-orden">Orden</label>
-            <input id="f-orden" class="input" type="number" min="0" max="100000" value="100">
-          </div>
-          <div class="field">
-            <label for="f-etiquetas">Etiquetas</label>
-            <input id="f-etiquetas" class="input" placeholder="Excel, PDF, ISO">
-            <div class="hint">Separadas por comas.</div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="lazy">
+          <div>
+            <strong>La Movida SST Plus</strong>
+            <span>De la reacción a la prevención</span>
           </div>
         </div>
-
-        <div class="field" style="margin-top:14px">
-          <label for="f-descripcion">Descripción *</label>
-          <textarea id="f-descripcion" class="textarea" maxlength="1200" required placeholder="Describe qué hace la aplicación y para qué sirve."></textarea>
-        </div>
-
-        <div class="field" style="margin-top:14px">
-          <label for="f-necesidad">¿Qué necesita hacer el profesional?</label>
-          <input id="f-necesidad" class="input" maxlength="220" placeholder="Ej. Calcular indicadores de accidentalidad">
-        </div>
-
-        <div class="checks" style="margin-top:14px">
-          <label class="check"><input id="f-destacada" type="checkbox"> Destacada</label>
-          <label class="check"><input id="f-publicada" type="checkbox"> Publicada</label>
-          <label class="check"><input id="f-archivada" type="checkbox"> Archivada</label>
-        </div>
-
-        <div id="form-error" class="error" role="alert"></div>
+        <p class="footer-note">Centro de aplicaciones profesionales · www.movidasst.com</p>
       </div>
-      <div class="sheet-actions">
-        <button id="cancel-btn" class="btn btn-secondary" type="button">Cancelar</button>
-        <button id="save-btn" class="btn btn-primary" type="submit">Guardar</button>
-      </div>
-    </form>
-  </div>
-</div>
+      <nav class="footer-links" aria-label="Enlaces del portal">
+        <a href="https://www.movidasst.com/" target="_self">Página principal</a>
+        <a href="https://registro.movidasst.com/" target="_self">Registro</a>
+        <a href="https://directorio.movidasst.com/" target="_self">Directorio</a>
+        <a href="/admin.html" target="_self">Administrar</a>
+      </nav>
+    </div>
+  </footer>
 
-<footer>
-  <div class="wrap footer-inner">
-    <div><strong>La Movida SST Plus</strong><br><span style="font-size:.78rem">De la reacción a la prevención</span></div>
-    <div><a href="/" target="_self">Aplicaciones SST</a> · <a href="https://www.movidasst.com/" target="_self">www.movidasst.com</a></div>
-  </div>
-</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    'use strict';
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-'use strict';
+    const SUPABASE_URL = 'https://lfdmbkzghnwvsapxypvt.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_bRnkA6PA8-v073nrw9zxiQ_8rVGiOn1';
 
-const SUPABASE_URL='https://lfdmbkzghnwvsapxypvt.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY='sb_publishable_bRnkA6PA8-v073nrw9zxiQ_8rVGiOn1';
+    const supabaseClient = window.supabase?.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY,
+      {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false,
+          detectSessionInUrl: false
+        }
+      }
+    ) || null;
 
-const sb=window.supabase?.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY,{
-  auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}
-})||null;
+    const state = {
+      items: [],
+      query: '',
+      category: 'Todas'
+    };
 
-const auth={cedula:'',codigo:''};
-let items=[];
+    const ICONS = {
+      toolbox:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6V4h6v2"/><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18M9 11v2h6v-2"/></svg>',
+      search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>',
+      chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg>',
+      project:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M7 10h10M7 14h6"/></svg>',
+      clipboard:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 9h6M9 13h6M9 17h4"/></svg>',
+      shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3.5 8 7 10 3.5-2 7-5 7-10V6l-7-3Z"/><path d="m9.5 12 1.6 1.6 3.7-4"/></svg>',
+      fire:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-5-4-8-6-12 0 4-4 5-4 9-1-1-2-2-2-4-2 2-3 4-3 7 0 4 4 7 8 7Z"/></svg>',
+      users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2.5-7 6-7s6 3 6 7M16 7c2.3.2 4 2 4 4 0 1.8-1 3.2-2.5 3.8M17 15c2.4.7 4 2.8 4 5"/></svg>',
+      book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Z"/><path d="M7 20a3 3 0 0 1 0-6h12"/></svg>',
+      graduation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12v4c3 2 7 2 10 0v-4M21 9v6"/></svg>',
+      map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15M15 6v15"/></svg>',
+      calculator:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg>',
+      ergonomics:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M8 22v-5l2-4-2-3M16 22v-6l-2-3 2-4M9 8l3 2 3-2"/></svg>',
+      info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>',
+      empty:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5z"/><path d="M9 9h6M9 13h4"/></svg>'
+    };
 
-const $=id=>document.getElementById(id);
+    const ICON_ALIASES = {
+      'chart-line':'chart','chart-bar':'chart','chart-pie':'chart','presentation-chart':'chart',
+      'clipboard-text':'clipboard','clipboard':'clipboard','file-text':'clipboard',
+      'shield-check':'shield','warning':'shield','hard-hat':'shield','first-aid':'shield','heartbeat':'shield',
+      'books':'book','book-open':'book','library':'book',
+      'graduation-cap':'graduation','student':'graduation',
+      'map-pin':'map','map-trifold':'map',
+      'person-simple':'ergonomics','person':'ergonomics',
+      'calendar':'project','kanban':'project','tree-structure':'project'
+    };
 
-function show(el,msg){
-  el.textContent=msg||'';
-  el.classList.toggle('show',Boolean(msg));
-}
-function normalizeCedula(v){return String(v||'').replace(/\D/g,'').slice(0,12)}
-function normalizeCodigo(v){return String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,5)}
-function fmtDate(v){
-  if(!v)return '';
-  try{return new Intl.DateTimeFormat('es-VE',{dateStyle:'medium',timeStyle:'short'}).format(new Date(v))}catch{return String(v)}
-}
-function safeText(v){return String(v??'')}
-function tagsFromInput(v){return String(v||'').split(',').map(x=>x.trim()).filter(Boolean).slice(0,20)}
-function slugify(v){
-  return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
-    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,100);
-}
+    const els = {
+      loading: document.getElementById('loading'),
+      errorSection: document.getElementById('error-section'),
+      errorMessage: document.getElementById('error-message'),
+      emptySection: document.getElementById('empty-section'),
+      featuredSection: document.getElementById('featured-section'),
+      featuredGrid: document.getElementById('featured-grid'),
+      featuredCount: document.getElementById('featured-count'),
+      needsSection: document.getElementById('needs-section'),
+      needsGrid: document.getElementById('needs-grid'),
+      appsSection: document.getElementById('apps-section'),
+      appsGrid: document.getElementById('apps-grid'),
+      appsCount: document.getElementById('apps-count'),
+      servicesSection: document.getElementById('services-section'),
+      servicesGrid: document.getElementById('services-grid'),
+      servicesCount: document.getElementById('services-count'),
+      noResults: document.getElementById('no-results'),
+      search: document.getElementById('search'),
+      clearSearch: document.getElementById('clear-search'),
+      categoryChips: document.getElementById('category-chips'),
+      heroCount: document.getElementById('hero-count')
+    };
 
-$('cedula').addEventListener('input',e=>e.target.value=normalizeCedula(e.target.value));
-$('codigo').addEventListener('input',e=>e.target.value=normalizeCodigo(e.target.value));
+    document.getElementById('search-icon').innerHTML = ICONS.search;
+    document.getElementById('empty-icon').innerHTML = ICONS.empty;
+    document.getElementById('no-results-icon').innerHTML = ICONS.search;
+    document.getElementById('info-icon').innerHTML = ICONS.info;
 
-$('login-form').addEventListener('submit',async e=>{
-  e.preventDefault();
-  show($('login-error'),'');
-  const cedula=normalizeCedula($('cedula').value);
-  const codigo=normalizeCodigo($('codigo').value);
-  if(cedula.length<5){show($('login-error'),'Ingresa una cédula válida.');return}
-  if(!/^[A-Z0-9]{5}$/.test(codigo)){show($('login-error'),'El código debe tener exactamente 5 caracteres.');return}
-  if(!sb){show($('login-error'),'No se pudo iniciar la conexión con Supabase.');return}
-  $('login-btn').disabled=true;
-  $('login-loading').classList.add('show');
-  try{
-    const {data,error}=await sb.rpc('catalogo_admin_listar',{p_cedula:cedula,p_codigo:codigo});
-    if(error)throw error;
-    auth.cedula=cedula;auth.codigo=codigo;
-    items=Array.isArray(data)?data:[];
-    $('codigo').value='';
-    $('login-shell').style.display='none';
-    $('admin').classList.add('show');
-    render();
-  }catch(err){
-    auth.cedula='';auth.codigo='';
-    show($('login-error'),'Acceso no autorizado o no fue posible validar las credenciales.');
-    console.error(err);
-  }finally{
-    $('login-btn').disabled=false;
-    $('login-loading').classList.remove('show');
-  }
-});
+    function normalize(value) {
+      return String(value ?? '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+    }
 
-async function reloadCatalog(){
-  show($('admin-error'),'');show($('admin-message'),'');
-  const {data,error}=await sb.rpc('catalogo_admin_listar',{p_cedula:auth.cedula,p_codigo:auth.codigo});
-  if(error){show($('admin-error'),'No se pudo actualizar el catálogo.');console.error(error);return}
-  items=Array.isArray(data)?data:[];
-  render();
-}
+    function safeUrl(value) {
+      try {
+        const url = new URL(String(value || ''));
+        return url.protocol === 'https:' ? url.href : null;
+      } catch (_) {
+        return null;
+      }
+    }
 
-function render(){
-  const q=String($('admin-search').value||'').toLowerCase().trim();
-  const filtered=items.filter(i=>[
-    i.nombre,i.slug,i.categoria,i.tipo,i.estado,i.norma,i.descripcion,(i.etiquetas||[]).join(' ')
-  ].join(' ').toLowerCase().includes(q));
-  $('stats').textContent=`${items.length} registro${items.length===1?'':'s'} · ${items.filter(x=>x.publicada&&!x.archivada).length} publicado${items.filter(x=>x.publicada&&!x.archivada).length===1?'':'s'}`;
-  const list=$('list');list.innerHTML='';
-  if(!filtered.length){
-    const e=document.createElement('div');e.className='card empty';
-    e.innerHTML='<h3>No hay registros</h3><p>Crea la primera aplicación con el botón “Nueva aplicación”.</p>';
-    list.appendChild(e);return;
-  }
-  filtered.forEach(item=>list.appendChild(buildItem(item)));
-}
+    function iconMarkup(name) {
+      const clean = String(name || '').toLowerCase().replace(/[^a-z0-9-]/g, '');
+      const resolved = ICON_ALIASES[clean] || clean;
+      return ICONS[resolved] || ICONS.toolbox;
+    }
 
-function buildItem(item){
-  const el=document.createElement('article');el.className='card item';
-  const top=document.createElement('div');top.className='item-top';
-  const icon=document.createElement('div');icon.className='item-icon';icon.textContent=(item.tipo==='servicio'?'S':'A');
-  const main=document.createElement('div');main.className='item-main';
-  const title=document.createElement('div');title.className='item-title';
-  const h=document.createElement('h3');h.textContent=item.nombre||'Sin nombre';title.appendChild(h);
-  if(item.publicada&&!item.archivada){const b=document.createElement('span');b.className='badge pub';b.textContent='Publicada';title.appendChild(b)}
-  if(item.destacada){const b=document.createElement('span');b.className='badge dest';b.textContent='Destacada';title.appendChild(b)}
-  if(item.archivada){const b=document.createElement('span');b.className='badge arch';b.textContent='Archivada';title.appendChild(b)}
-  main.appendChild(title);
-  const meta=document.createElement('div');meta.className='meta';meta.textContent=`${item.tipo||'aplicacion'} · ${item.categoria||'Sin categoría'} · ${item.estado||''} · orden ${item.orden ?? 100}`;main.appendChild(meta);
-  if(item.updated_at){const d=document.createElement('div');d.className='meta';d.textContent=`Actualizada: ${fmtDate(item.updated_at)}`;main.appendChild(d)}
-  const desc=document.createElement('p');desc.className='desc';desc.textContent=item.descripcion||'';main.appendChild(desc);
-  top.appendChild(icon);top.appendChild(main);el.appendChild(top);
+    function statusClass(status) {
+      return normalize(status).replace(/\s+/g, '');
+    }
 
-  const actions=document.createElement('div');actions.className='item-actions';
-  const edit=button('Editar','btn btn-secondary',()=>openForm(item));
-  actions.appendChild(edit);
+    function create(tag, className, text) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (text !== undefined && text !== null) el.textContent = text;
+      return el;
+    }
 
-  if(!item.archivada){
-    actions.appendChild(button(item.publicada?'Ocultar':'Publicar',item.publicada?'btn btn-secondary':'btn btn-green',()=>quickPublish(item,!item.publicada)));
-    actions.appendChild(button('Archivar','btn btn-danger',()=>quickArchive(item,true)));
-  }else{
-    actions.appendChild(button('Restaurar','btn btn-green',()=>quickArchive(item,false)));
-  }
-  el.appendChild(actions);
-  return el;
-}
+    function buildCard(item) {
+      const card = create('article','app-card');
+      const cover = create('div','card-cover');
+      const imageUrl = safeUrl(item.imagen_url);
 
-function button(text,cls,fn){
-  const b=document.createElement('button');b.type='button';b.className=cls;b.textContent=text;b.addEventListener('click',fn);return b;
-}
+      if (imageUrl) {
+        const img = create('img');
+        img.src = imageUrl;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.addEventListener('error', () => {
+          const fallback = create('div','cover-fallback');
+          const icon = create('div','app-icon');
+          icon.innerHTML = iconMarkup(item.icono);
+          fallback.appendChild(icon);
+          img.replaceWith(fallback);
+        }, { once:true });
+        cover.appendChild(img);
+      } else {
+        const fallback = create('div','cover-fallback');
+        const icon = create('div','app-icon');
+        icon.innerHTML = iconMarkup(item.icono);
+        fallback.appendChild(icon);
+        cover.appendChild(fallback);
+      }
 
-$('admin-search').addEventListener('input',render);
-$('refresh-btn').addEventListener('click',reloadCatalog);
-$('new-btn').addEventListener('click',()=>openForm(null));
-$('logout-btn').addEventListener('click',()=>{
-  auth.cedula='';auth.codigo='';items=[];
-  $('admin').classList.remove('show');$('login-shell').style.display='block';
-  $('cedula').value='';$('codigo').value='';$('admin-search').value='';
-});
+      const badges = create('div','card-badges');
+      const status = create('span',`badge ${statusClass(item.estado)}`, item.estado || 'Disponible');
+      badges.appendChild(status);
+      if (item.destacada) badges.appendChild(create('span','badge','Destacada'));
+      cover.appendChild(badges);
+      card.appendChild(cover);
 
-function resetForm(){
-  $('app-form').reset();
-  $('f-id').value='';
-  $('f-categoria').value='Gestión SST';
-  $('f-tipo').value='aplicacion';
-  $('f-estado').value='Disponible';
-  $('f-icono').value='toolbox';
-  $('f-orden').value='100';
-  show($('form-error'),'');
-}
+      const body = create('div','card-body');
+      const kicker = create('div','card-kicker');
+      kicker.appendChild(create('span','',item.categoria || 'SST'));
+      if (item.norma) {
+        kicker.appendChild(create('span','','•'));
+        kicker.appendChild(create('span','',item.norma));
+      }
+      body.appendChild(kicker);
+      body.appendChild(create('h3','card-title',item.nombre || 'Aplicación SST'));
+      if (item.titulo_corto) body.appendChild(create('p','card-short',item.titulo_corto));
+      body.appendChild(create('p','card-desc',item.descripcion || ''));
 
-function openForm(item){
-  resetForm();
-  $('modal-title').textContent=item?'Editar aplicación':'Nueva aplicación';
-  if(item){
-    $('f-id').value=item.id??'';
-    $('f-nombre').value=item.nombre??'';
-    $('f-slug').value=item.slug??'';
-    $('f-titulo').value=item.titulo_corto??'';
-    $('f-categoria').value=item.categoria??'Gestión SST';
-    $('f-tipo').value=item.tipo??'aplicacion';
-    $('f-estado').value=item.estado??'Disponible';
-    $('f-url').value=item.url??'';
-    $('f-imagen').value=item.imagen_url??'';
-    $('f-norma').value=item.norma??'';
-    $('f-icono').value=item.icono??'toolbox';
-    $('f-orden').value=item.orden??100;
-    $('f-etiquetas').value=Array.isArray(item.etiquetas)?item.etiquetas.join(', '):'';
-    $('f-descripcion').value=item.descripcion??'';
-    $('f-necesidad').value=item.necesidad??'';
-    $('f-destacada').checked=Boolean(item.destacada);
-    $('f-publicada').checked=Boolean(item.publicada);
-    $('f-archivada').checked=Boolean(item.archivada);
-  }
-  $('modal').classList.add('open');$('modal').setAttribute('aria-hidden','false');
-  setTimeout(()=>$('f-nombre').focus(),50);
-}
-function closeForm(){
-  $('modal').classList.remove('open');$('modal').setAttribute('aria-hidden','true');
-}
-$('close-modal').addEventListener('click',closeForm);
-$('cancel-btn').addEventListener('click',closeForm);
-$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeForm()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('modal').classList.contains('open'))closeForm()});
+      const tags = Array.isArray(item.etiquetas) ? item.etiquetas.filter(Boolean).slice(0,5) : [];
+      if (tags.length) {
+        const tagsWrap = create('div','tags');
+        tags.forEach(tag => tagsWrap.appendChild(create('span','tag',tag)));
+        body.appendChild(tagsWrap);
+      }
+      card.appendChild(body);
 
-$('f-nombre').addEventListener('blur',()=>{
-  if(!$('f-slug').value.trim())$('f-slug').value=slugify($('f-nombre').value);
-});
+      const footer = create('div','card-footer');
+      footer.appendChild(create('span','type-label',item.tipo === 'servicio' ? 'Servicio' : 'Aplicación'));
+      const url = safeUrl(item.url);
+      const available = url && normalize(item.estado) !== 'proximamente';
+      const link = create('a',`open-link${available ? '' : ' disabled'}`, available ? 'Abrir →' : 'Próximamente');
+      if (available) {
+        link.href = url;
+        link.target = '_self';
+        link.setAttribute('aria-label',`Abrir ${item.nombre}`);
+      } else {
+        link.href = '#';
+        link.setAttribute('aria-disabled','true');
+        link.tabIndex = -1;
+      }
+      footer.appendChild(link);
+      card.appendChild(footer);
+      return card;
+    }
 
-$('app-form').addEventListener('submit',async e=>{
-  e.preventDefault();
-  show($('form-error'),'');
-  const nombre=$('f-nombre').value.trim();
-  const descripcion=$('f-descripcion').value.trim();
-  const categoria=$('f-categoria').value.trim();
-  if(nombre.length<2){show($('form-error'),'El nombre debe tener al menos 2 caracteres.');return}
-  if(descripcion.length<10){show($('form-error'),'La descripción debe tener al menos 10 caracteres.');return}
-  if(categoria.length<2){show($('form-error'),'La categoría es obligatoria.');return}
+    function buildNeed(item) {
+      const url = safeUrl(item.url);
+      const available = url && normalize(item.estado) !== 'proximamente';
+      const wrap = create(available ? 'a' : 'div','need-card');
+      if (available) { wrap.href = url; wrap.target = '_self'; }
+      const icon = create('div','need-icon');
+      icon.innerHTML = iconMarkup(item.icono);
+      wrap.appendChild(icon);
+      const copy = create('div','need-copy');
+      copy.appendChild(create('strong','',item.necesidad));
+      copy.appendChild(create('span','',item.nombre));
+      wrap.appendChild(copy);
+      wrap.appendChild(create('span','need-arrow',available ? '→' : '•'));
+      return wrap;
+    }
 
-  const datos={
-    slug:$('f-slug').value.trim()||slugify(nombre),
-    nombre,
-    titulo_corto:$('f-titulo').value.trim(),
-    descripcion,
-    url:$('f-url').value.trim(),
-    categoria,
-    tipo:$('f-tipo').value,
-    norma:$('f-norma').value.trim(),
-    necesidad:$('f-necesidad').value.trim(),
-    imagen_url:$('f-imagen').value.trim(),
-    icono:$('f-icono').value,
-    etiquetas:tagsFromInput($('f-etiquetas').value),
-    estado:$('f-estado').value,
-    destacada:$('f-destacada').checked,
-    publicada:$('f-publicada').checked,
-    archivada:$('f-archivada').checked,
-    orden:Number($('f-orden').value||100)
-  };
-  if($('f-id').value)datos.id=Number($('f-id').value);
+    function filteredItems() {
+      const q = normalize(state.query);
+      return state.items.filter(item => {
+        const categoryOk = state.category === 'Todas' || item.categoria === state.category;
+        if (!categoryOk) return false;
+        if (!q) return true;
+        const haystack = normalize([
+          item.nombre,
+          item.titulo_corto,
+          item.descripcion,
+          item.categoria,
+          item.tipo,
+          item.norma,
+          item.necesidad,
+          ...(Array.isArray(item.etiquetas) ? item.etiquetas : [])
+        ].join(' '));
+        return haystack.includes(q);
+      });
+    }
 
-  $('save-btn').disabled=true;
-  try{
-    const {data,error}=await sb.rpc('catalogo_admin_guardar',{
-      p_cedula:auth.cedula,p_codigo:auth.codigo,p_datos:datos
+    function renderCategories() {
+      const categories = [...new Set(state.items.map(i => i.categoria).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'es',{sensitivity:'base'}));
+      const all = ['Todas', ...categories];
+      els.categoryChips.replaceChildren();
+      all.forEach(category => {
+        const btn = create('button',`chip${state.category === category ? ' active' : ''}`,category);
+        btn.type = 'button';
+        btn.addEventListener('click',() => {
+          state.category = category;
+          renderCategories();
+          renderCatalog();
+        });
+        els.categoryChips.appendChild(btn);
+      });
+    }
+
+    function renderCatalog() {
+      const visible = filteredItems();
+      const apps = visible.filter(i => i.tipo !== 'servicio');
+      const services = visible.filter(i => i.tipo === 'servicio');
+      const featured = visible.filter(i => i.destacada);
+
+      const seenNeeds = new Set();
+      const needs = visible.filter(item => {
+        const key = normalize(item.necesidad);
+        if (!key || seenNeeds.has(key)) return false;
+        seenNeeds.add(key);
+        return true;
+      }).slice(0,6);
+
+      els.featuredGrid.replaceChildren(...featured.map(buildCard));
+      els.appsGrid.replaceChildren(...apps.map(buildCard));
+      els.servicesGrid.replaceChildren(...services.map(buildCard));
+      els.needsGrid.replaceChildren(...needs.map(buildNeed));
+
+      els.featuredSection.classList.toggle('hidden',featured.length === 0);
+      els.needsSection.classList.toggle('hidden',needs.length === 0);
+      els.appsSection.classList.toggle('hidden',apps.length === 0);
+      els.servicesSection.classList.toggle('hidden',services.length === 0);
+      els.noResults.classList.toggle('hidden',visible.length !== 0 || state.items.length === 0);
+
+      els.featuredCount.textContent = `${featured.length} destacada${featured.length === 1 ? '' : 's'}`;
+      els.appsCount.textContent = `${apps.length} aplicación${apps.length === 1 ? '' : 'es'}`;
+      els.servicesCount.textContent = `${services.length} servicio${services.length === 1 ? '' : 's'}`;
+
+      const totalApps = state.items.filter(i => i.tipo !== 'servicio').length;
+      const totalServices = state.items.filter(i => i.tipo === 'servicio').length;
+      const parts = [];
+      if (totalApps) parts.push(`${totalApps} aplicación${totalApps === 1 ? '' : 'es'}`);
+      if (totalServices) parts.push(`${totalServices} servicio${totalServices === 1 ? '' : 's'}`);
+      els.heroCount.textContent = parts.length ? parts.join(' · ') : 'Catálogo preparado';
+    }
+
+    function showError(message) {
+      els.loading.classList.add('hidden');
+      els.emptySection.classList.add('hidden');
+      els.errorSection.classList.remove('hidden');
+      els.errorMessage.textContent = message || 'Comprueba tu conexión e inténtalo nuevamente.';
+    }
+
+    async function loadCatalog() {
+      els.errorSection.classList.add('hidden');
+      els.emptySection.classList.add('hidden');
+      els.loading.classList.remove('hidden');
+
+      if (!supabaseClient) {
+        showError('No se pudo iniciar la conexión con Supabase. Verifica que supabase-js haya cargado correctamente.');
+        return;
+      }
+
+      try {
+        const { data, error } = await supabaseClient.rpc('catalogo_aplicaciones_publico');
+        if (error) throw error;
+        state.items = Array.isArray(data) ? data : [];
+        state.category = 'Todas';
+        els.loading.classList.add('hidden');
+
+        if (state.items.length === 0) {
+          els.heroCount.textContent = 'Catálogo preparado';
+          els.emptySection.classList.remove('hidden');
+          els.featuredSection.classList.add('hidden');
+          els.needsSection.classList.add('hidden');
+          els.appsSection.classList.add('hidden');
+          els.servicesSection.classList.add('hidden');
+          renderCategories();
+          return;
+        }
+
+        renderCategories();
+        renderCatalog();
+      } catch (err) {
+        console.error('Error cargando catálogo:',err);
+        const msg = err?.message && !String(err.message).includes('JWT')
+          ? `Supabase respondió: ${err.message}`
+          : 'No fue posible consultar el catálogo público.';
+        showError(msg);
+      }
+    }
+
+    els.search.addEventListener('input',() => {
+      state.query = els.search.value;
+      els.clearSearch.classList.toggle('show',Boolean(state.query));
+      renderCatalog();
     });
-    if(error)throw error;
-    closeForm();
-    show($('admin-message'),data?.message||'Guardado correctamente.');
-    await reloadCatalog();
-  }catch(err){
-    show($('form-error'),err?.message||'No se pudo guardar.');
-    console.error(err);
-  }finally{$('save-btn').disabled=false}
-});
 
-async function quickPublish(item,value){
-  if(value&&item.estado!=='Próximamente'&&!item.url){
-    show($('admin-error'),'No puedes publicar esta aplicación sin una URL válida.');return;
-  }
-  const {data,error}=await sb.rpc('catalogo_admin_publicar',{
-    p_cedula:auth.cedula,p_codigo:auth.codigo,p_id:item.id,p_publicada:value
-  });
-  if(error){show($('admin-error'),error.message||'No se pudo cambiar la publicación.');return}
-  show($('admin-message'),data?.message||'Estado actualizado.');
-  await reloadCatalog();
-}
+    els.clearSearch.addEventListener('click',() => {
+      els.search.value = '';
+      state.query = '';
+      els.clearSearch.classList.remove('show');
+      els.search.focus();
+      renderCatalog();
+    });
 
-async function quickArchive(item,value){
-  const ok=confirm(value?'¿Archivar esta aplicación? Se ocultará del portal, pero no se eliminará.':'¿Restaurar esta aplicación?');
-  if(!ok)return;
-  const {data,error}=await sb.rpc('catalogo_admin_archivar',{
-    p_cedula:auth.cedula,p_codigo:auth.codigo,p_id:item.id,p_archivar:value
-  });
-  if(error){show($('admin-error'),error.message||'No se pudo cambiar el archivo.');return}
-  show($('admin-message'),data?.message||'Estado actualizado.');
-  await reloadCatalog();
-}
-</script>
+    document.getElementById('retry-btn').addEventListener('click',loadCatalog);
+
+    window.addEventListener('DOMContentLoaded',loadCatalog);
+  </script>
 </body>
 </html>
