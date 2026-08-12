@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Aplicaciones SST | La Movida SST Plus</title>
+  <meta name="description" content="Centro de aplicaciones y herramientas digitales de La Movida SST Plus para profesionales de Seguridad y Salud en el Trabajo.">
+  <meta name="theme-color" content="#0B2A6F">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://aplicaciones.movidasst.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aplicaciones.movidasst.com/">
+  <meta property="og:title" content="Aplicaciones SST | La Movida SST Plus">
+  <meta property="og:description" content="Herramientas digitales para analizar, planificar, evaluar y documentar la gestión SST.">
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+  <meta property="og:site_name" content="La Movida SST Plus">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aplicaciones SST | La Movida SST Plus">
+  <meta name="twitter:description" content="Centro de aplicaciones profesionales para Seguridad y Salud en el Trabajo.">
+  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+
+  <style>
+    :root {
+      --navy:#0B2A6F;
+      --petrol:#006D8F;
+      --turquoise:#00AFC5;
+      --green:#58B947;
+      --ink:#172033;
+      --muted:#64748b;
+      --line:#dfe7ef;
+      --bg:#f5f8fb;
+      --surface:#ffffff;
+      --soft:#eef6f8;
+      --danger:#b42318;
+      --warning:#b54708;
+      --shadow:0 18px 50px rgba(15, 41, 71, .10);
+      --shadow-sm:0 8px 24px rgba(15, 41, 71, .08);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(0,175,197,.10), transparent 30rem),
+        radial-gradient(circle at 100% 0%, rgba(88,185,71,.08), transparent 26rem),
+        var(--bg);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    button,input{font:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent; }
+    button:focus-visible,a:focus-visible,input:focus-visible{
+      outline:3px solid rgba(0,175,197,.28);
+      outline-offset:3px;
+    }
+    .wrap{width:min(100% - 28px,var(--max));margin-inline:auto}
+    .topbar{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(223,231,239,.9);
+    }
+    .topbar-inner{
+      min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
+    .brand img{width:45px;height:45px;object-fit:contain;border-radius:13px;background:#fff}
+    .brand-copy{min-width:0}
+    .brand-copy strong{display:block;color:var(--navy);font-size:.98rem;line-height:1.05;white-space:nowrap}
+    .brand-copy span{display:block;color:var(--petrol);font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
+    .top-actions{display:flex;align-items:center;gap:8px}
+    .icon-btn,.ghost-btn,.primary-btn,.secondary-btn{
+      min-height:44px;border:0;border-radius:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .icon-btn{width:44px;background:#f1f5f9;color:var(--navy)}
+    .ghost-btn{padding:0 14px;background:#f1f5f9;color:var(--navy);font-size:.9rem}
+    .primary-btn{padding:0 18px;background:linear-gradient(135deg,var(--navy),var(--petrol));color:#fff;box-shadow:0 10px 24px rgba(11,42,111,.18)}
+    .secondary-btn{padding:0 18px;background:#fff;color:var(--navy);border:1px solid var(--line)}
+
+    .hero{padding:34px 0 20px}
+    .hero-card{
+      position:relative;overflow:hidden;
+      background:linear-gradient(135deg,#0B2A6F 0%,#075779 58%,#007f91 100%);
+      color:#fff;border-radius:28px;padding:26px 20px;box-shadow:var(--shadow);
+    }
+    .hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
+    .hero-card:before{width:220px;height:220px;right:-90px;top:-90px;background:rgba(255,255,255,.08)}
+    .hero-card:after{width:190px;height:190px;left:-110px;bottom:-120px;background:rgba(88,185,71,.16)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:#c9f5fb;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:8px 10px;border-radius:999px}
+    .hero h1{position:relative;margin:16px 0 10px;font-size:clamp(2rem,8vw,4.3rem);line-height:.98;letter-spacing:-.045em;max-width:850px}
+    .hero p{position:relative;margin:0;max-width:760px;color:#d8edf3;font-size:1rem;line-height:1.62}
+    .hero-meta{position:relative;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .meta-pill{font-size:.78rem;font-weight:800;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);padding:8px 10px;border-radius:999px;color:#ecfbff}
+
+    .search-shell{position:relative;margin-top:-2px;padding:18px 0 8px}
+    .search-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);border-radius:20px;padding:10px}
+    .search-row{display:flex;gap:8px;align-items:center}
+    .search-icon{width:42px;height:42px;display:grid;place-items:center;color:var(--petrol);flex:0 0 auto}
+    .search-input{width:100%;height:48px;border:0;outline:0;background:transparent;color:var(--ink);font-size:1rem;min-width:0}
+    .search-input::placeholder{color:#94a3b8}
+    .clear-btn{border:0;background:#f1f5f9;color:#64748b;border-radius:12px;min-width:42px;height:42px;cursor:pointer;display:none}
+    .clear-btn.show{display:block}
+    .category-scroll{display:flex;gap:8px;overflow:auto;padding:12px 2px 3px;scrollbar-width:none}
+    .category-scroll::-webkit-scrollbar{display:none}
+    .chip{white-space:nowrap;min-height:40px;border:1px solid var(--line);background:#fff;color:#475569;padding:0 14px;border-radius:999px;font-weight:800;font-size:.84rem;cursor:pointer}
+    .chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+
+    .section{padding:24px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}
+    .section-title{margin:0;font-size:1.45rem;letter-spacing:-.03em;color:var(--navy)}
+    .section-sub{margin:5px 0 0;color:var(--muted);font-size:.93rem;line-height:1.5}
+    .section-count{font-size:.8rem;font-weight:900;color:var(--petrol);background:#e9f6f8;padding:8px 10px;border-radius:999px;white-space:nowrap}
+
+    .featured-grid,.cards-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .app-card{
+      background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+      transition:transform .2s ease, box-shadow .2s ease,border-color .2s ease;
+      min-width:0;
+    }
+    .app-card:focus-within{border-color:#9bdde4}
+    .card-cover{height:132px;background:linear-gradient(135deg,#e9f5f8,#eef8eb);position:relative;overflow:hidden}
+    .card-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .cover-fallback{height:100%;display:flex;align-items:center;justify-content:center;background:
+      radial-gradient(circle at 70% 15%,rgba(0,175,197,.18),transparent 45%),
+      linear-gradient(135deg,#e9f4f8,#f7fbfc)}
+    .app-icon{width:66px;height:66px;border-radius:20px;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 12px 28px rgba(11,42,111,.14)}
+    .app-icon svg{width:34px;height:34px}
+    .card-badges{position:absolute;top:12px;left:12px;right:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+    .badge{display:inline-flex;align-items:center;min-height:28px;border-radius:999px;padding:0 10px;font-size:.7rem;font-weight:900;letter-spacing:.03em;background:#fff;color:var(--navy);box-shadow:0 5px 16px rgba(15,23,42,.12)}
+    .badge.nueva{color:#075985;background:#e0f2fe}
+    .badge.beta{color:#92400e;background:#fef3c7}
+    .badge.proximamente{color:#475569;background:#f1f5f9}
+    .badge.disponible{color:#166534;background:#dcfce7}
+    .card-body{padding:18px}
+    .card-kicker{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:var(--petrol);font-size:.74rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    .card-title{margin:8px 0 5px;font-size:1.22rem;letter-spacing:-.025em;color:var(--ink)}
+    .card-short{margin:0 0 10px;color:#475569;font-weight:700;font-size:.9rem}
+    .card-desc{margin:0;color:var(--muted);font-size:.9rem;line-height:1.58;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .tag{font-size:.7rem;font-weight:800;color:#475569;background:#f1f5f9;padding:6px 8px;border-radius:8px}
+    .card-footer{padding:0 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .open-link{min-height:44px;border-radius:13px;padding:0 15px;background:var(--navy);color:#fff;text-decoration:none;font-weight:900;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:1}
+    .open-link.disabled{background:#e2e8f0;color:#64748b;pointer-events:none}
+    .type-label{font-size:.72rem;font-weight:900;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
+
+    .needs-grid{display:grid;grid-template-columns:1fr;gap:10px}
+    .need-card{border:1px solid var(--line);background:#fff;border-radius:17px;padding:14px;display:flex;gap:12px;align-items:center;text-decoration:none;box-shadow:0 4px 16px rgba(15,41,71,.05);min-height:76px}
+    .need-icon{width:46px;height:46px;flex:0 0 auto;border-radius:14px;background:#e9f6f8;color:var(--petrol);display:grid;place-items:center}
+    .need-icon svg{width:24px;height:24px}
+    .need-copy{min-width:0}
+    .need-copy strong{display:block;font-size:.95rem;line-height:1.25;color:var(--ink)}
+    .need-copy span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+    .need-arrow{margin-left:auto;color:var(--petrol);font-weight:900}
+
+    .empty,.error-box,.loading-box{border:1px dashed #b9c8d8;background:rgba(255,255,255,.72);border-radius:22px;padding:28px 18px;text-align:center;color:var(--muted)}
+    .empty-icon{width:62px;height:62px;border-radius:20px;margin:0 auto 12px;background:#e9f6f8;color:var(--petrol);display:grid;place-items:center}
+    .empty-icon svg{width:32px;height:32px}
+    .empty h3,.error-box h3{margin:0 0 8px;color:var(--navy);font-size:1.1rem}
+    .empty p,.error-box p{margin:0 auto;max-width:620px;line-height:1.6;font-size:.9rem}
+    .retry-btn{margin-top:14px;min-height:44px;border:0;border-radius:13px;background:var(--navy);color:#fff;padding:0 16px;font-weight:900;cursor:pointer}
+    .skeleton{height:260px;border-radius:22px;background:linear-gradient(90deg,#edf2f7 25%,#f7fafc 38%,#edf2f7 63%);background-size:400% 100%;animation:shine 1.25s infinite}
+    @keyframes shine{0%{background-position:100% 0}100%{background-position:-100% 0}}
+
+    .notice{margin:24px 0 0;border:1px solid #cae7e9;background:#f2fbfb;border-radius:18px;padding:15px;display:flex;gap:12px;align-items:flex-start;color:#315569}
+    .notice svg{width:22px;height:22px;flex:0 0 auto;color:var(--petrol)}
+    .notice p{margin:0;font-size:.84rem;line-height:1.55}
+
+    footer{margin-top:28px;background:#071c3c;color:#dbe8f4;padding:28px 0 calc(28px + env(safe-area-inset-bottom))}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+    .footer-brand img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:13px}
+    .footer-brand strong{display:block;color:#fff}
+    .footer-brand span{display:block;color:#9fc5d5;font-size:.8rem;margin-top:4px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:10px 16px}
+    .footer-links a{color:#c7dae7;text-decoration:none;font-weight:700;font-size:.84rem}
+    .footer-note{color:#89a8bb;font-size:.76rem;line-height:1.5}
+
+    .hidden{display:none!important}
+
+    @media (min-width:640px){
+      .wrap{width:min(100% - 40px,var(--max))}
+      .hero-card{padding:34px 32px}
+      .needs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards-grid,.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .footer-grid{grid-template-columns:1.2fr .8fr;align-items:center}
+      .footer-links{justify-content:flex-end}
+    }
+    @media (min-width:920px){
+      .hero{padding-top:48px}
+      .hero-card{padding:48px 44px}
+      .search-shell{margin-top:-28px;position:relative;z-index:5}
+      .search-card{padding:12px 14px}
+      .featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .needs-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .app-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(15,41,71,.13);border-color:#b9dfe4}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://www.movidasst.com/" aria-label="Volver a La Movida SST">
+        <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="eager">
+        <div class="brand-copy">
+          <strong>La Movida SST Plus</strong>
+          <span>Aplicaciones SST</span>
+        </div>
+      </a>
+      <div class="top-actions">
+        <a class="ghost-btn" href="https://www.movidasst.com/">Inicio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-card">
+          <span class="eyebrow">Centro de herramientas profesionales</span>
+          <h1>¿Qué necesitas hacer hoy en SST?</h1>
+          <p>Explora aplicaciones digitales de La Movida SST para analizar, planificar, evaluar y documentar tu gestión desde un solo lugar.</p>
+          <div class="hero-meta">
+            <span class="meta-pill" id="hero-count">Cargando catálogo…</span>
+            <span class="meta-pill">Mobile first</span>
+            <span class="meta-pill">Actualización continua</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-shell" aria-label="Buscar aplicaciones">
+      <div class="wrap">
+        <div class="search-card">
+          <div class="search-row">
+            <div class="search-icon" aria-hidden="true" id="search-icon"></div>
+            <input id="search" class="search-input" type="search" autocomplete="off" inputmode="search" placeholder="Buscar por nombre, norma, categoría o necesidad…" aria-label="Buscar aplicaciones">
+            <button id="clear-search" class="clear-btn" type="button" aria-label="Limpiar búsqueda">×</button>
+          </div>
+          <div id="category-chips" class="category-scroll" aria-label="Filtrar por categoría"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div id="loading" class="section">
+        <div class="cards-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+
+      <section id="error-section" class="section hidden" aria-live="polite">
+        <div class="error-box">
+          <h3>No pudimos cargar el catálogo</h3>
+          <p id="error-message">Comprueba tu conexión e inténtalo nuevamente.</p>
+          <button class="retry-btn" type="button" id="retry-btn">Reintentar</button>
+        </div>
+      </section>
+
+      <section id="empty-section" class="section hidden" aria-live="polite">
+        <div class="empty">
+          <div class="empty-icon" id="empty-icon"></div>
+          <h3>El portal está listo</h3>
+          <p>Todavía no hay aplicaciones publicadas. Cuando publiques la primera desde el panel de administración, aparecerá aquí automáticamente sin modificar este HTML.</p>
+        </div>
+      </section>
+
+      <section id="featured-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Destacadas</h2>
+            <p class="section-sub">Herramientas que queremos poner primero a tu alcance.</p>
+          </div>
+          <span id="featured-count" class="section-count"></span>
+        </div>
+        <div id="featured-grid" class="featured-grid"></div>
+      </section>
+
+      <section id="needs-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">¿Qué necesitas hacer?</h2>
+            <p class="section-sub">Entra por la necesidad profesional, no por el nombre de la aplicación.</p>
+          </div>
+        </div>
+        <div id="needs-grid" class="needs-grid"></div>
+      </section>
+
+      <section id="apps-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Aplicaciones SST</h2>
+            <p class="section-sub">Herramientas para apoyar la gestión técnica y la toma de decisiones.</p>
+          </div>
+          <span id="apps-count" class="section-count"></span>
+        </div>
+        <div id="apps-grid" class="cards-grid"></div>
+      </section>
+
+      <section id="services-section" class="section hidden">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Ecosistema La Movida SST</h2>
+            <p class="section-sub">Servicios, espacios y recursos que forman parte de la comunidad.</p>
+          </div>
+          <span id="services-count" class="section-count"></span>
+        </div>
+        <div id="services-grid" class="cards-grid"></div>
+      </section>
+
+      <section id="no-results" class="section hidden" aria-live="polite">
+        <div class="empty">
+          <div class="empty-icon" id="no-results-icon"></div>
+          <h3>No encontramos coincidencias</h3>
+          <p>Prueba otra palabra o selecciona “Todas” para volver a ver el catálogo completo.</p>
+        </div>
+      </section>
+
+      <div class="notice">
+        <div id="info-icon" aria-hidden="true"></div>
+        <p>Estas herramientas apoyan el trabajo profesional en SST y no sustituyen el juicio técnico, la evaluación específica del contexto ni los requisitos legales aplicables.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="lazy">
+          <div>
+            <strong>La Movida SST Plus</strong>
+            <span>De la reacción a la prevención</span>
+          </div>
+        </div>
+        <p class="footer-note">Centro de aplicaciones profesionales · www.movidasst.com</p>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del portal">
+        <a href="https://www.movidasst.com/">MovidaSST.com</a>
+        <a href="https://registro.movidasst.com/">Registro</a>
+        <a href="https://directorio.movidasst.com/">Directorio</a>
+        <a href="/admin/">Administrar</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    'use strict';
+
+    const SUPABASE_URL = 'https://lfdmbkzghnwvsapxypvt.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_bRnkA6PA8-v073nrw9zxiQ_8rVGiOn1';
+
+    const supabaseClient = window.supabase?.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY,
+      {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: false,
+          detectSessionInUrl: false
+        }
+      }
+    ) || null;
+
+    const state = {
+      items: [],
+      query: '',
+      category: 'Todas'
+    };
+
+    const ICONS = {
+      toolbox:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6V4h6v2"/><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18M9 11v2h6v-2"/></svg>',
+      search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>',
+      chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg>',
+      project:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M7 10h10M7 14h6"/></svg>',
+      clipboard:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 9h6M9 13h6M9 17h4"/></svg>',
+      shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3.5 8 7 10 3.5-2 7-5 7-10V6l-7-3Z"/><path d="m9.5 12 1.6 1.6 3.7-4"/></svg>',
+      fire:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-7 0-5-4-8-6-12 0 4-4 5-4 9-1-1-2-2-2-4-2 2-3 4-3 7 0 4 4 7 8 7Z"/></svg>',
+      users:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2.5-7 6-7s6 3 6 7M16 7c2.3.2 4 2 4 4 0 1.8-1 3.2-2.5 3.8M17 15c2.4.7 4 2.8 4 5"/></svg>',
+      book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4Z"/><path d="M7 20a3 3 0 0 1 0-6h12"/></svg>',
+      graduation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12v4c3 2 7 2 10 0v-4M21 9v6"/></svg>',
+      map:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"/><path d="M9 3v15M15 6v15"/></svg>',
+      calculator:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h4"/></svg>',
+      ergonomics:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M8 22v-5l2-4-2-3M16 22v-6l-2-3 2-4M9 8l3 2 3-2"/></svg>',
+      info:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg>',
+      empty:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5z"/><path d="M9 9h6M9 13h4"/></svg>'
+    };
+
+    const ICON_ALIASES = {
+      'chart-line':'chart','chart-bar':'chart','chart-pie':'chart','presentation-chart':'chart',
+      'clipboard-text':'clipboard','clipboard':'clipboard','file-text':'clipboard',
+      'shield-check':'shield','warning':'shield','hard-hat':'shield','first-aid':'shield','heartbeat':'shield',
+      'books':'book','book-open':'book','library':'book',
+      'graduation-cap':'graduation','student':'graduation',
+      'map-pin':'map','map-trifold':'map',
+      'person-simple':'ergonomics','person':'ergonomics',
+      'calendar':'project','kanban':'project','tree-structure':'project'
+    };
+
+    const els = {
+      loading: document.getElementById('loading'),
+      errorSection: document.getElementById('error-section'),
+      errorMessage: document.getElementById('error-message'),
+      emptySection: document.getElementById('empty-section'),
+      featuredSection: document.getElementById('featured-section'),
+      featuredGrid: document.getElementById('featured-grid'),
+      featuredCount: document.getElementById('featured-count'),
+      needsSection: document.getElementById('needs-section'),
+      needsGrid: document.getElementById('needs-grid'),
+      appsSection: document.getElementById('apps-section'),
+      appsGrid: document.getElementById('apps-grid'),
+      appsCount: document.getElementById('apps-count'),
+      servicesSection: document.getElementById('services-section'),
+      servicesGrid: document.getElementById('services-grid'),
+      servicesCount: document.getElementById('services-count'),
+      noResults: document.getElementById('no-results'),
+      search: document.getElementById('search'),
+      clearSearch: document.getElementById('clear-search'),
+      categoryChips: document.getElementById('category-chips'),
+      heroCount: document.getElementById('hero-count')
+    };
+
+    document.getElementById('search-icon').innerHTML = ICONS.search;
+    document.getElementById('empty-icon').innerHTML = ICONS.empty;
+    document.getElementById('no-results-icon').innerHTML = ICONS.search;
+    document.getElementById('info-icon').innerHTML = ICONS.info;
+
+    function normalize(value) {
+      return String(value ?? '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+    }
+
+    function safeUrl(value) {
+      try {
+        const url = new URL(String(value || ''));
+        return url.protocol === 'https:' ? url.href : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function iconMarkup(name) {
+      const clean = String(name || '').toLowerCase().replace(/[^a-z0-9-]/g, '');
+      const resolved = ICON_ALIASES[clean] || clean;
+      return ICONS[resolved] || ICONS.toolbox;
+    }
+
+    function statusClass(status) {
+      return normalize(status).replace(/\s+/g, '');
+    }
+
+    function create(tag, className, text) {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (text !== undefined && text !== null) el.textContent = text;
+      return el;
+    }
+
+    function buildCard(item) {
+      const card = create('article','app-card');
+      const cover = create('div','card-cover');
+      const imageUrl = safeUrl(item.imagen_url);
+
+      if (imageUrl) {
+        const img = create('img');
+        img.src = imageUrl;
+        img.alt = '';
+        img.loading = 'lazy';
+        img.addEventListener('error', () => {
+          const fallback = create('div','cover-fallback');
+          const icon = create('div','app-icon');
+          icon.innerHTML = iconMarkup(item.icono);
+          fallback.appendChild(icon);
+          img.replaceWith(fallback);
+        }, { once:true });
+        cover.appendChild(img);
+      } else {
+        const fallback = create('div','cover-fallback');
+        const icon = create('div','app-icon');
+        icon.innerHTML = iconMarkup(item.icono);
+        fallback.appendChild(icon);
+        cover.appendChild(fallback);
+      }
+
+      const badges = create('div','card-badges');
+      const status = create('span',`badge ${statusClass(item.estado)}`, item.estado || 'Disponible');
+      badges.appendChild(status);
+      if (item.destacada) badges.appendChild(create('span','badge','Destacada'));
+      cover.appendChild(badges);
+      card.appendChild(cover);
+
+      const body = create('div','card-body');
+      const kicker = create('div','card-kicker');
+      kicker.appendChild(create('span','',item.categoria || 'SST'));
+      if (item.norma) {
+        kicker.appendChild(create('span','','•'));
+        kicker.appendChild(create('span','',item.norma));
+      }
+      body.appendChild(kicker);
+      body.appendChild(create('h3','card-title',item.nombre || 'Aplicación SST'));
+      if (item.titulo_corto) body.appendChild(create('p','card-short',item.titulo_corto));
+      body.appendChild(create('p','card-desc',item.descripcion || ''));
+
+      const tags = Array.isArray(item.etiquetas) ? item.etiquetas.filter(Boolean).slice(0,5) : [];
+      if (tags.length) {
+        const tagsWrap = create('div','tags');
+        tags.forEach(tag => tagsWrap.appendChild(create('span','tag',tag)));
+        body.appendChild(tagsWrap);
+      }
+      card.appendChild(body);
+
+      const footer = create('div','card-footer');
+      footer.appendChild(create('span','type-label',item.tipo === 'servicio' ? 'Servicio' : 'Aplicación'));
+      const url = safeUrl(item.url);
+      const available = url && normalize(item.estado) !== 'proximamente';
+      const link = create('a',`open-link${available ? '' : ' disabled'}`, available ? 'Abrir →' : 'Próximamente');
+      if (available) {
+        link.href = url;
+        link.setAttribute('aria-label',`Abrir ${item.nombre}`);
+      } else {
+        link.href = '#';
+        link.setAttribute('aria-disabled','true');
+        link.tabIndex = -1;
+      }
+      footer.appendChild(link);
+      card.appendChild(footer);
+      return card;
+    }
+
+    function buildNeed(item) {
+      const url = safeUrl(item.url);
+      const available = url && normalize(item.estado) !== 'proximamente';
+      const wrap = create(available ? 'a' : 'div','need-card');
+      if (available) wrap.href = url;
+      const icon = create('div','need-icon');
+      icon.innerHTML = iconMarkup(item.icono);
+      wrap.appendChild(icon);
+      const copy = create('div','need-copy');
+      copy.appendChild(create('strong','',item.necesidad));
+      copy.appendChild(create('span','',item.nombre));
+      wrap.appendChild(copy);
+      wrap.appendChild(create('span','need-arrow',available ? '→' : '•'));
+      return wrap;
+    }
+
+    function filteredItems() {
+      const q = normalize(state.query);
+      return state.items.filter(item => {
+        const categoryOk = state.category === 'Todas' || item.categoria === state.category;
+        if (!categoryOk) return false;
+        if (!q) return true;
+        const haystack = normalize([
+          item.nombre,
+          item.titulo_corto,
+          item.descripcion,
+          item.categoria,
+          item.tipo,
+          item.norma,
+          item.necesidad,
+          ...(Array.isArray(item.etiquetas) ? item.etiquetas : [])
+        ].join(' '));
+        return haystack.includes(q);
+      });
+    }
+
+    function renderCategories() {
+      const categories = [...new Set(state.items.map(i => i.categoria).filter(Boolean))]
+        .sort((a,b) => a.localeCompare(b,'es',{sensitivity:'base'}));
+      const all = ['Todas', ...categories];
+      els.categoryChips.replaceChildren();
+      all.forEach(category => {
+        const btn = create('button',`chip${state.category === category ? ' active' : ''}`,category);
+        btn.type = 'button';
+        btn.addEventListener('click',() => {
+          state.category = category;
+          renderCategories();
+          renderCatalog();
+        });
+        els.categoryChips.appendChild(btn);
+      });
+    }
+
+    function renderCatalog() {
+      const visible = filteredItems();
+      const apps = visible.filter(i => i.tipo !== 'servicio');
+      const services = visible.filter(i => i.tipo === 'servicio');
+      const featured = visible.filter(i => i.destacada);
+
+      const seenNeeds = new Set();
+      const needs = visible.filter(item => {
+        const key = normalize(item.necesidad);
+        if (!key || seenNeeds.has(key)) return false;
+        seenNeeds.add(key);
+        return true;
+      }).slice(0,6);
+
+      els.featuredGrid.replaceChildren(...featured.map(buildCard));
+      els.appsGrid.replaceChildren(...apps.map(buildCard));
+      els.servicesGrid.replaceChildren(...services.map(buildCard));
+      els.needsGrid.replaceChildren(...needs.map(buildNeed));
+
+      els.featuredSection.classList.toggle('hidden',featured.length === 0);
+      els.needsSection.classList.toggle('hidden',needs.length === 0);
+      els.appsSection.classList.toggle('hidden',apps.length === 0);
+      els.servicesSection.classList.toggle('hidden',services.length === 0);
+      els.noResults.classList.toggle('hidden',visible.length !== 0 || state.items.length === 0);
+
+      els.featuredCount.textContent = `${featured.length} destacada${featured.length === 1 ? '' : 's'}`;
+      els.appsCount.textContent = `${apps.length} aplicación${apps.length === 1 ? '' : 'es'}`;
+      els.servicesCount.textContent = `${services.length} servicio${services.length === 1 ? '' : 's'}`;
+
+      const totalApps = state.items.filter(i => i.tipo !== 'servicio').length;
+      const totalServices = state.items.filter(i => i.tipo === 'servicio').length;
+      const parts = [];
+      if (totalApps) parts.push(`${totalApps} aplicación${totalApps === 1 ? '' : 'es'}`);
+      if (totalServices) parts.push(`${totalServices} servicio${totalServices === 1 ? '' : 's'}`);
+      els.heroCount.textContent = parts.length ? parts.join(' · ') : 'Catálogo preparado';
+    }
+
+    function showError(message) {
+      els.loading.classList.add('hidden');
+      els.emptySection.classList.add('hidden');
+      els.errorSection.classList.remove('hidden');
+      els.errorMessage.textContent = message || 'Comprueba tu conexión e inténtalo nuevamente.';
+    }
+
+    async function loadCatalog() {
+      els.errorSection.classList.add('hidden');
+      els.emptySection.classList.add('hidden');
+      els.loading.classList.remove('hidden');
+
+      if (!supabaseClient) {
+        showError('No se pudo iniciar la conexión con Supabase. Verifica que supabase-js haya cargado correctamente.');
+        return;
+      }
+
+      try {
+        const { data, error } = await supabaseClient.rpc('catalogo_aplicaciones_publico');
+        if (error) throw error;
+        state.items = Array.isArray(data) ? data : [];
+        state.category = 'Todas';
+        els.loading.classList.add('hidden');
+
+        if (state.items.length === 0) {
+          els.heroCount.textContent = 'Catálogo preparado';
+          els.emptySection.classList.remove('hidden');
+          els.featuredSection.classList.add('hidden');
+          els.needsSection.classList.add('hidden');
+          els.appsSection.classList.add('hidden');
+          els.servicesSection.classList.add('hidden');
+          renderCategories();
+          return;
+        }
+
+        renderCategories();
+        renderCatalog();
+      } catch (err) {
+        console.error('Error cargando catálogo:',err);
+        const msg = err?.message && !String(err.message).includes('JWT')
+          ? `Supabase respondió: ${err.message}`
+          : 'No fue posible consultar el catálogo público.';
+        showError(msg);
+      }
+    }
+
+    els.search.addEventListener('input',() => {
+      state.query = els.search.value;
+      els.clearSearch.classList.toggle('show',Boolean(state.query));
+      renderCatalog();
+    });
+
+    els.clearSearch.addEventListener('click',() => {
+      els.search.value = '';
+      state.query = '';
+      els.clearSearch.classList.remove('show');
+      els.search.focus();
+      renderCatalog();
+    });
+
+    document.getElementById('retry-btn').addEventListener('click',loadCatalog);
+
+    window.addEventListener('DOMContentLoaded',loadCatalog);
+  </script>
+</body>
+</html>
