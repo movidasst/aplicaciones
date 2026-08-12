@@ -3,21 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Aplicaciones SST | La Movida SST Plus</title>
-  <meta name="description" content="Centro de aplicaciones y herramientas digitales de La Movida SST Plus para profesionales de Seguridad y Salud en el Trabajo.">
+  <title>Aplicaciones SST y Herramientas Digitales | La Movida SST</title>
+  <meta name="description" content="Aplicaciones y herramientas digitales para profesionales de Seguridad y Salud en el Trabajo: gestión SST, proyectos, riesgos, ergonomía, emergencias y más.">
   <meta name="theme-color" content="#0B2A6F">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="La Movida SST">
+  <meta name="application-name" content="Aplicaciones SST - La Movida SST">
+  <meta name="keywords" content="aplicaciones SST, herramientas SST, seguridad y salud en el trabajo, prevención de riesgos laborales, gestión SST, ergonomía, emergencias, ISO SST, Venezuela">
   <link rel="canonical" href="https://aplicaciones.movidasst.com/">
+  <link rel="alternate" hreflang="es-VE" href="https://aplicaciones.movidasst.com/">
+  <link rel="alternate" hreflang="x-default" href="https://aplicaciones.movidasst.com/">
+  <link rel="sitemap" type="application/xml" href="https://aplicaciones.movidasst.com/sitemap.xml">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aplicaciones.movidasst.com/">
-  <meta property="og:title" content="Aplicaciones SST | La Movida SST Plus">
-  <meta property="og:description" content="Herramientas digitales para analizar, planificar, evaluar y documentar la gestión SST.">
+  <meta property="og:title" content="Aplicaciones SST y Herramientas Digitales | La Movida SST">
+  <meta property="og:description" content="Centro de aplicaciones de La Movida SST para analizar, planificar, evaluar y documentar la gestión de Seguridad y Salud en el Trabajo.">
+  <meta property="og:locale" content="es_VE">
   <meta property="og:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+  <meta property="og:image:alt" content="La Movida SST - Centro de Aplicaciones SST">
   <meta property="og:site_name" content="La Movida SST Plus">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aplicaciones SST | La Movida SST Plus">
-  <meta name="twitter:description" content="Centro de aplicaciones profesionales para Seguridad y Salud en el Trabajo.">
+  <meta name="twitter:title" content="Aplicaciones SST y Herramientas Digitales | La Movida SST">
+  <meta name="twitter:description" content="Herramientas digitales para profesionales de SST: gestión, proyectos, riesgos, ergonomía, emergencias y más.">
   <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.movidasst.com/#organization",
+        "name": "La Movida SST",
+        "url": "https://www.movidasst.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w1200"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aplicaciones.movidasst.com/#website",
+        "url": "https://aplicaciones.movidasst.com/",
+        "name": "Aplicaciones SST - La Movida SST",
+        "description": "Centro de aplicaciones y herramientas digitales para profesionales de Seguridad y Salud en el Trabajo.",
+        "inLanguage": "es-VE",
+        "publisher": {"@id": "https://www.movidasst.com/#organization"}
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://aplicaciones.movidasst.com/#webpage",
+        "url": "https://aplicaciones.movidasst.com/",
+        "name": "Aplicaciones SST y Herramientas Digitales | La Movida SST",
+        "description": "Catálogo de herramientas digitales para apoyar la gestión profesional de Seguridad y Salud en el Trabajo.",
+        "isPartOf": {"@id": "https://aplicaciones.movidasst.com/#website"},
+        "about": {"@id": "https://www.movidasst.com/#organization"},
+        "inLanguage": "es-VE"
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -25,6 +70,9 @@
       --petrol:#006D8F;
       --turquoise:#00AFC5;
       --green:#58B947;
+      --flag-yellow:#F4C430;
+      --flag-blue:#0038A8;
+      --flag-red:#CF142B;
       --ink:#172033;
       --muted:#64748b;
       --line:#dfe7ef;
@@ -61,15 +109,22 @@
     .wrap{width:min(100% - 28px,var(--max));margin-inline:auto}
     .topbar{
       position:sticky;top:0;z-index:40;
-      background:rgba(255,255,255,.92);
+      background:rgba(255,255,255,.94);
       backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(223,231,239,.9);
+    }
+    .topbar::after{
+      content:"";
+      display:block;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%);
     }
     .topbar-inner{
       min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px;
     }
     .brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:0}
-    .brand img{width:45px;height:45px;object-fit:contain;border-radius:13px;background:#fff}
+    .brand img{width:56px;height:56px;object-fit:contain;border-radius:16px;background:#fff;padding:4px;box-shadow:0 10px 24px rgba(11,42,111,.08)}
     .brand-copy{min-width:0}
     .brand-copy strong{display:block;color:var(--navy);font-size:.98rem;line-height:1.05;white-space:nowrap}
     .brand-copy span{display:block;color:var(--petrol);font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
@@ -78,7 +133,7 @@
       min-height:44px;border:0;border-radius:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;
     }
     .icon-btn{width:44px;background:#f1f5f9;color:var(--navy)}
-    .ghost-btn{padding:0 14px;background:#f1f5f9;color:var(--navy);font-size:.9rem}
+    .ghost-btn{padding:0 14px;background:#f1f5f9;color:var(--navy);font-size:.9rem}.home-btn{padding:0 15px;background:linear-gradient(135deg,var(--navy),var(--flag-blue));color:#fff;box-shadow:0 8px 20px rgba(11,42,111,.16);font-size:.86rem}
     .primary-btn{padding:0 18px;background:linear-gradient(135deg,var(--navy),var(--petrol));color:#fff;box-shadow:0 10px 24px rgba(11,42,111,.18)}
     .secondary-btn{padding:0 18px;background:#fff;color:var(--navy);border:1px solid var(--line)}
 
@@ -86,8 +141,18 @@
     .hero-card{
       position:relative;overflow:hidden;
       background:linear-gradient(135deg,#0B2A6F 0%,#075779 58%,#007f91 100%);
-      color:#fff;border-radius:28px;padding:26px 20px;box-shadow:var(--shadow);
+      color:#fff;border-radius:28px;padding:26px 20px 36px;box-shadow:var(--shadow);
     }
+    .hero-card::marker{content:''}
+    .hero-flagbar{
+      position:absolute;left:0;right:0;bottom:0;height:9px;
+      background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%);
+    }
+    .hero-brand{position:relative;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+    .hero-brand img{width:72px;height:72px;object-fit:contain;border-radius:20px;background:#fff;padding:6px;box-shadow:0 14px 30px rgba(7,28,60,.22)}
+    .hero-brand-copy{min-width:0}
+    .hero-brand-copy strong{display:block;font-size:1.08rem;line-height:1.05;color:#fff}
+    .hero-brand-copy span{display:block;margin-top:6px;color:#ffeaa1;font-size:.78rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
     .hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:999px;pointer-events:none}
     .hero-card:before{width:220px;height:220px;right:-90px;top:-90px;background:rgba(255,255,255,.08)}
     .hero-card:after{width:190px;height:190px;left:-110px;bottom:-120px;background:rgba(88,185,71,.16)}
@@ -112,7 +177,7 @@
 
     .section{padding:24px 0}
     .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px}
-    .section-title{margin:0;font-size:1.45rem;letter-spacing:-.03em;color:var(--navy)}
+    .section-title{margin:0;font-size:1.45rem;letter-spacing:-.03em;color:var(--navy);position:relative;padding-bottom:10px}.section-title::after{content:"";position:absolute;left:0;bottom:0;width:92px;height:5px;border-radius:999px;background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%)}
     .section-sub{margin:5px 0 0;color:var(--muted);font-size:.93rem;line-height:1.5}
     .section-count{font-size:.8rem;font-weight:900;color:var(--petrol);background:#e9f6f8;padding:8px 10px;border-radius:999px;white-space:nowrap}
 
@@ -170,10 +235,11 @@
     .notice svg{width:22px;height:22px;flex:0 0 auto;color:var(--petrol)}
     .notice p{margin:0;font-size:.84rem;line-height:1.55}
 
-    footer{margin-top:28px;background:#071c3c;color:#dbe8f4;padding:28px 0 calc(28px + env(safe-area-inset-bottom))}
+    footer{margin-top:28px;background:#071c3c;color:#dbe8f4;padding:28px 0 calc(28px + env(safe-area-inset-bottom));position:relative}
+    footer::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--flag-yellow) 0 33.33%, var(--flag-blue) 33.33% 66.66%, var(--flag-red) 66.66% 100%)}
     .footer-grid{display:grid;grid-template-columns:1fr;gap:18px}
     .footer-brand{display:flex;align-items:center;gap:12px}
-    .footer-brand img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:13px}
+    .footer-brand img{width:56px;height:56px;object-fit:contain;background:#fff;border-radius:16px;padding:4px}
     .footer-brand strong{display:block;color:#fff}
     .footer-brand span{display:block;color:#9fc5d5;font-size:.8rem;margin-top:4px}
     .footer-links{display:flex;flex-wrap:wrap;gap:10px 16px}
@@ -209,7 +275,7 @@
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand" href="https://www.movidasst.com/" aria-label="Volver a La Movida SST">
+      <a class="brand" href="https://www.movidasst.com/" target="_self" aria-label="Volver a la página principal de La Movida SST">
         <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="eager">
         <div class="brand-copy">
           <strong>La Movida SST Plus</strong>
@@ -217,7 +283,7 @@
         </div>
       </a>
       <div class="top-actions">
-        <a class="ghost-btn" href="https://www.movidasst.com/">Inicio</a>
+        <a class="ghost-btn home-btn" href="https://www.movidasst.com/" target="_self" aria-label="Ir a la página principal de La Movida SST">← Página principal</a>
       </div>
     </div>
   </header>
@@ -226,6 +292,13 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
+          <div class="hero-brand">
+            <img src="https://drive.google.com/thumbnail?id=1MjVa3JxeKC95xEdlcZ5ZFMCKlatbrU2s&sz=w300" alt="La Movida SST Plus" loading="eager">
+            <div class="hero-brand-copy">
+              <strong>La Movida SST Plus</strong>
+              <span>Aplicaciones y herramientas profesionales</span>
+            </div>
+          </div>
           <span class="eyebrow">Centro de herramientas profesionales</span>
           <h1>¿Qué necesitas hacer hoy en SST?</h1>
           <p>Explora aplicaciones digitales de La Movida SST para analizar, planificar, evaluar y documentar tu gestión desde un solo lugar.</p>
@@ -233,7 +306,9 @@
             <span class="meta-pill" id="hero-count">Cargando catálogo…</span>
             <span class="meta-pill">Mobile first</span>
             <span class="meta-pill">Actualización continua</span>
+            <span class="meta-pill">La Movida SST</span>
           </div>
+          <div class="hero-flagbar" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -347,10 +422,10 @@
         <p class="footer-note">Centro de aplicaciones profesionales · www.movidasst.com</p>
       </div>
       <nav class="footer-links" aria-label="Enlaces del portal">
-        <a href="https://www.movidasst.com/">MovidaSST.com</a>
-        <a href="https://registro.movidasst.com/">Registro</a>
-        <a href="https://directorio.movidasst.com/">Directorio</a>
-        <a href="/admin/">Administrar</a>
+        <a href="https://www.movidasst.com/" target="_self">Página principal</a>
+        <a href="https://registro.movidasst.com/" target="_self">Registro</a>
+        <a href="https://directorio.movidasst.com/" target="_self">Directorio</a>
+        <a href="/admin/" target="_self">Administrar</a>
       </nav>
     </div>
   </footer>
@@ -531,6 +606,7 @@
       const link = create('a',`open-link${available ? '' : ' disabled'}`, available ? 'Abrir →' : 'Próximamente');
       if (available) {
         link.href = url;
+        link.target = '_self';
         link.setAttribute('aria-label',`Abrir ${item.nombre}`);
       } else {
         link.href = '#';
@@ -546,7 +622,7 @@
       const url = safeUrl(item.url);
       const available = url && normalize(item.estado) !== 'proximamente';
       const wrap = create(available ? 'a' : 'div','need-card');
-      if (available) wrap.href = url;
+      if (available) { wrap.href = url; wrap.target = '_self'; }
       const icon = create('div','need-icon');
       icon.innerHTML = iconMarkup(item.icono);
       wrap.appendChild(icon);
